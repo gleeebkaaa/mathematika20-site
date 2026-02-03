@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="МАТЕМАТИКА 2.0 — пространство математического мышления. Индивидуальные и групповые занятия по математике для школьников и студентов.">
+    <meta name="keywords" content="математика, репетитор, обучение, ЕГЭ, ОГЭ, математическое мышление">
+    <title>МАТЕМАТИКА 2.0 — Пространство математического мышления</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="math-symbol">∑</div>
+            <div class="loading-text">Загрузка...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="assets/logo_trimmed.png" alt="МАТЕМАТИКА 2.0" class="nav__logo-img">
+            </a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">О нас</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#programs" class="nav__link">Программы</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#pricing" class="nav__link">Стоимость</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#reviews" class="nav__link">Отзывы</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contacts" class="nav__link">Контакты</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="nav__actions">
+                <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary nav__cta">
+                    <i class="fab fa-telegram"></i>
+                    Записаться
+                </a>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__bg">
+                <div class="hero__shapes">
+                    <div class="shape shape--1"></div>
+                    <div class="shape shape--2"></div>
+                    <div class="shape shape--3"></div>
+                    <div class="shape shape--4"></div>
+                </div>
+                <div class="hero__particles" id="particles"></div>
+            </div>
+            
+            <div class="hero__container container">
+                <div class="hero__content" data-aos="fade-up" data-aos-delay="100">
+                    <span class="hero__badge">
+                        <i class="fas fa-star"></i>
+                        Новый подход к обучению
+                    </span>
+                    
+                    <h1 class="hero__title">
+                        Пространство<br>
+                        <span class="gradient-text">математического</span><br>
+                        мышления
+                    </h1>
+                    
+                    <p class="hero__description">
+                        Место, где математика раскрывается как язык понимания мира, 
+                        а не набор формул. Мы учим понимать идею, мыслить глубоко 
+                        и рассуждать свободно.
+                    </p>
+                    
+                    <div class="hero__actions">
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary btn--lg">
+                            <i class="fab fa-telegram"></i>
+                            Записаться на пробное занятие
+                        </a>
+                        <a href="#about" class="btn btn--outline btn--lg">
+                            <i class="fas fa-play-circle"></i>
+                            Узнать больше
+                        </a>
+                    </div>
+                    
+                    <div class="hero__stats">
+                        <div class="stat">
+                            <div class="stat__value">
+                                <span class="stat__number" data-count="500">0</span>
+                                <span class="stat__symbol">+</span>
+                            </div>
+                            <span class="stat__label">учеников</span>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__value">
+                                <span class="stat__number" data-count="5">0</span>
+                            </div>
+                            <span class="stat__label">лет опыта</span>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__value">
+                                <span class="stat__number" data-count="98">0</span>
+                                <span class="stat__symbol">%</span>
+                            </div>
+                            <span class="stat__label">успешных результатов</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero__visual" data-aos="fade-left" data-aos-delay="300">
+                    <div class="hero__image-wrapper">
+                        <div class="floating-card floating-card--1">
+                            <i class="fas fa-square-root-variable"></i>
+                            <span>Алгебра</span>
+                        </div>
+                        <div class="floating-card floating-card--2">
+                            <i class="fas fa-shapes"></i>
+                            <span>Геометрия</span>
+                        </div>
+                        <div class="floating-card floating-card--3">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Анализ</span>
+                        </div>
+                        <div class="math-formulas">
+                            <span class="formula formula--1">∫f(x)dx</span>
+                            <span class="formula formula--2">∑n²</span>
+                            <span class="formula formula--3">√π</span>
+                            <span class="formula formula--4">lim→∞</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero__scroll">
+                <a href="#about" class="scroll-indicator">
+                    <span>Прокрутите вниз</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">О нас</span>
+                    <h2 class="section__title">Почему <span class="gradient-text">МАТЕМАТИКА 2.0</span>?</h2>
+                    <p class="section__description">
+                        Это новый взгляд на обучение: мы создаём среду, которая поддерживает, 
+                        направляет и помогает расти
+                    </p>
+                </div>
+                
+                <div class="about__content">
+                    <div class="about__image" data-aos="fade-right">
+                        <div class="about__image-wrapper">
+                            <div class="about__image-bg"></div>
+                            <div class="about__experience">
+                                <span class="about__experience-number">5+</span>
+                                <span class="about__experience-text">лет опыта</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about__info" data-aos="fade-left">
+                        <div class="about__features">
+                            <div class="feature">
+                                <div class="feature__icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="feature__content">
+                                    <h3 class="feature__title">Понимание, а не заучивание</h3>
+                                    <p class="feature__text">
+                                        Мы учим понимать математические концепции глубоко, 
+                                        развивая логическое мышление и интуицию
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature">
+                                <div class="feature__icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div class="feature__content">
+                                    <h3 class="feature__title">Индивидуальный подход</h3>
+                                    <p class="feature__text">
+                                        Каждый ученик уникален. Мы адаптируем программу 
+                                        под ваши цели и особенности восприятия
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature">
+                                <div class="feature__icon">
+                                    <i class="fas fa-shield-halved"></i>
+                                </div>
+                                <div class="feature__content">
+                                    <h3 class="feature__title">Безопасная среда</h3>
+                                    <p class="feature__text">
+                                        Без страха перед ошибками. Мы создаём атмосферу, 
+                                        где можно экспериментировать и задавать вопросы
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature">
+                                <div class="feature__icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="feature__content">
+                                    <h3 class="feature__title">Результат гарантирован</h3>
+                                    <p class="feature__text">
+                                        98% наших учеников достигают поставленных целей 
+                                        и улучшают свои результаты
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Teacher Section -->
+        <section class="teacher section" id="teacher">
+            <div class="container">
+                <div class="teacher__content">
+                    <div class="teacher__info" data-aos="fade-right">
+                        <span class="section__subtitle">Преподаватель</span>
+                        <h2 class="section__title">Знакомьтесь с <span class="gradient-text">основателем</span></h2>
+                        
+                        <div class="teacher__details">
+                            <p class="teacher__bio">
+                                Привет! Я — основатель математического центра «МАТЕМАТИКА 2.0». 
+                                Моя миссия — показать, что математика может быть увлекательной 
+                                и понятной для каждого.
+                            </p>
+                            
+                            <div class="teacher__credentials">
+                                <div class="credential">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Высшее педагогическое образование</span>
+                                </div>
+                                <div class="credential">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Индивидуальный предприниматель</span>
+                                </div>
+                                <div class="credential">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Более 5 лет преподавательского опыта</span>
+                                </div>
+                                <div class="credential">
+                                    <i class="fas fa-users"></i>
+                                    <span>Более 500 успешных учеников</span>
+                                </div>
+                            </div>
+                            
+                            <blockquote class="teacher__quote">
+                                «Математика — это не про формулы, это про способ мышления. 
+                                Моя задача — научить вас думать, а не запоминать.»
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="teacher__visual" data-aos="fade-left">
+                        <div class="teacher__image-wrapper">
+                            <div class="teacher__image-bg"></div>
+                            <div class="teacher__socials">
+                                <a href="https://t.me/mathematikaa20" target="_blank" class="social-link">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="https://www.instagram.com/mathematika20" target="_blank" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://vk.com/mathematika20" target="_blank" class="social-link">
+                                    <i class="fab fa-vk"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="programs section" id="programs">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">Программы обучения</span>
+                    <h2 class="section__title">Выберите свой <span class="gradient-text">путь</span></h2>
+                    <p class="section__description">
+                        Программы для школьников всех возрастов
+                    </p>
+                </div>
+
+                <div class="programs__grid programs__grid--3">
+                    <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="program-card__icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <h3 class="program-card__title">Начальная школа</h3>
+                        <p class="program-card__grades">1-4 класс</p>
+                        <ul class="program-card__features">
+                            <li><i class="fas fa-check"></i> Основы математического мышления</li>
+                            <li><i class="fas fa-check"></i> Устный счёт и логика</li>
+                            <li><i class="fas fa-check"></i> Олимпиадная подготовка</li>
+                            <li><i class="fas fa-check"></i> Игровой формат занятий</li>
+                        </ul>
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--outline">
+                            Подробнее
+                        </a>
+                    </div>
+                    
+                    <div class="program-card program-card--featured" data-aos="fade-up" data-aos-delay="200">
+                        <div class="program-card__badge">Популярное</div>
+                        <div class="program-card__icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="program-card__title">Средняя школа</h3>
+                        <p class="program-card__grades">5-9 класс</p>
+                        <ul class="program-card__features">
+                            <li><i class="fas fa-check"></i> Алгебра и геометрия</li>
+                            <li><i class="fas fa-check"></i> Подготовка к ОГЭ</li>
+                            <li><i class="fas fa-check"></i> Олимпиадная математика</li>
+                            <li><i class="fas fa-check"></i> Устранение пробелов</li>
+                        </ul>
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary">
+                            Подробнее
+                        </a>
+                    </div>
+                    
+                    <div class="program-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="program-card__icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3 class="program-card__title">Старшая школа</h3>
+                        <p class="program-card__grades">10-11 класс</p>
+                        <ul class="program-card__features">
+                            <li><i class="fas fa-check"></i> Подготовка к ЕГЭ (базовый)</li>
+                            <li><i class="fas fa-check"></i> Подготовка к ЕГЭ (профиль)</li>
+                            <li><i class="fas fa-check"></i> Высшая математика</li>
+                            <li><i class="fas fa-check"></i> Поступление в ВУЗ</li>
+                        </ul>
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--outline">
+                            Подробнее
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing section" id="pricing">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">Стоимость</span>
+                    <h2 class="section__title">Прозрачные <span class="gradient-text">цены</span></h2>
+                    <p class="section__description">
+                        Выберите формат занятий, который подходит именно вам
+                    </p>
+                </div>
+                
+                <div class="pricing__grid">
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">Групповые занятия</h3>
+                            <p class="pricing-card__subtitle">Эффективное обучение в группе</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="price-amount">2 000</span>
+                            <span class="price-currency">₽</span>
+                            <span class="price-period">/ 55 мин</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><i class="fas fa-check"></i> Разовое занятие — 2 000 ₽</li>
+                            <li><i class="fas fa-check"></i> Абонемент (8 занятий) — 11 500 ₽</li>
+                            <li><i class="fas fa-check"></i> Группы по уровню</li>
+                            <li><i class="fas fa-check"></i> Интерактивный формат</li>
+                            <li><i class="fas fa-check"></i> Экономия при абонементе</li>
+                        </ul>
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--outline btn--block">
+                            Записаться
+                        </a>
+                    </div>
+                    
+                    <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">Парные занятия</h3>
+                            <p class="pricing-card__subtitle">Занятия вдвоём</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="price-amount">2 500</span>
+                            <span class="price-currency">₽</span>
+                            <span class="price-period">/ 55 мин</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><i class="fas fa-check"></i> Разовое занятие — 2 500 ₽</li>
+                            <li><i class="fas fa-check"></i> Абонемент (8 занятий) — 13 600 ₽</li>
+                            <li><i class="fas fa-check"></i> Индивидуальный подход</li>
+                            <li><i class="fas fa-check"></i> Работа в паре</li>
+                            <li><i class="fas fa-check"></i> Гибкий график</li>
+                        </ul>
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--outline btn--block">
+                            Записаться
+                        </a>
+                    </div>
+                    
+                    <div class="pricing-card pricing-card--featured" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pricing-card__badge">Популярное</div>
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__title">Индивидуальные</h3>
+                            <p class="pricing-card__subtitle">Занятия один на один</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="price-amount">3 000</span>
+                            <span class="price-currency">₽</span>
+                            <span class="price-period">/ 55 мин</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li><i class="fas fa-check"></i> Разовое занятие — 3 000 ₽</li>
+                            <li><i class="fas fa-check"></i> Абонемент (8 занятий) — 15 500 ₽</li>
+                            <li><i class="fas fa-check"></i> Персональная программа</li>
+                            <li><i class="fas fa-check"></i> Максимум внимания</li>
+                            <li><i class="fas fa-check"></i> Гибкий график</li>
+                        </ul>
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary btn--block">
+                            Записаться
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="pricing__note" data-aos="fade-up">
+                    <i class="fas fa-info-circle"></i>
+                    <p>
+                        Абонемент включает 8 занятий в течение месяца. Длительность занятия — 55 минут. 
+                        Оплата производится путём предоплаты в начале месяца или накануне занятия.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews section" id="reviews">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">Отзывы</span>
+                    <h2 class="section__title">Что говорят <span class="gradient-text">ученики</span></h2>
+                    <p class="section__description">
+                        Реальные истории успеха наших учеников и их родителей
+                    </p>
+                </div>
+                
+                <div class="reviews__slider" data-aos="fade-up">
+                    <div class="reviews__track" id="reviews-track">
+                        <div class="review-card">
+                            <div class="review-card__rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-card__text">
+                                «Благодаря занятиям мой сын полюбил математику! Раньше это был самый 
+                                нелюбимый предмет, а теперь он сам просит дополнительные задачи. 
+                                Огромное спасибо за индивидуальный подход!»
+                            </p>
+                            <div class="review-card__author">
+                                <div class="review-card__avatar">М</div>
+                                <div class="review-card__info">
+                                    <span class="review-card__name">Мария С.</span>
+                                    <span class="review-card__role">мама ученика 7 класса</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="review-card">
+                            <div class="review-card__rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-card__text">
+                                «Сдал ЕГЭ на 92 балла! Когда начинал заниматься, писал пробники на 60. 
+                                Методика реально работает — начал понимать, а не зубрить. 
+                                Поступил в МФТИ, мечта сбылась!»
+                            </p>
+                            <div class="review-card__author">
+                                <div class="review-card__avatar">А</div>
+                                <div class="review-card__info">
+                                    <span class="review-card__name">Александр К.</span>
+                                    <span class="review-card__role">выпускник 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="review-card">
+                            <div class="review-card__rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-card__text">
+                                «Дочь занимается уже второй год. За это время она стала победителем 
+                                муниципального этапа олимпиады. Очень довольны результатами и 
+                                атмосферой на занятиях!»
+                            </p>
+                            <div class="review-card__author">
+                                <div class="review-card__avatar">Е</div>
+                                <div class="review-card__info">
+                                    <span class="review-card__name">Елена В.</span>
+                                    <span class="review-card__role">мама ученицы 9 класса</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="review-card">
+                            <div class="review-card__rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-card__text">
+                                «Как взрослый человек, вернулась к изучению математики для работы. 
+                                Объясняют понятно, терпеливо, без осуждения. Теперь уверенно работаю 
+                                с данными и аналитикой!»
+                            </p>
+                            <div class="review-card__author">
+                                <div class="review-card__avatar">О</div>
+                                <div class="review-card__info">
+                                    <span class="review-card__name">Ольга Н.</span>
+                                    <span class="review-card__role">маркетолог</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reviews__controls">
+                        <button class="reviews__btn reviews__btn--prev" id="reviews-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="reviews__dots" id="reviews-dots"></div>
+                        <button class="reviews__btn reviews__btn--next" id="reviews-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta section">
+            <div class="container">
+                <div class="cta__content" data-aos="zoom-in">
+                    <div class="cta__bg">
+                        <div class="cta__shape cta__shape--1"></div>
+                        <div class="cta__shape cta__shape--2"></div>
+                    </div>
+                    
+                    <h2 class="cta__title">
+                        Готовы начать свой путь<br>
+                        в мир <span class="gradient-text">математики</span>?
+                    </h2>
+                    
+                    <p class="cta__description">
+                        Запишитесь на бесплатное пробное занятие прямо сейчас 
+                        и убедитесь в эффективности нашего подхода
+                    </p>
+                    
+                    <div class="cta__actions">
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--white btn--lg">
+                            <i class="fab fa-telegram"></i>
+                            Записаться в Telegram
+                        </a>
+                    </div>
+                    
+                    <div class="cta__socials">
+                        <span>Мы в социальных сетях:</span>
+                        <div class="cta__social-links">
+                            <a href="https://t.me/mathematikaa20" target="_blank">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://www.instagram.com/mathematika20" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://vk.com/mathematika20" target="_blank">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacts Section -->
+        <section class="contacts section" id="contacts">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">Контакты</span>
+                    <h2 class="section__title">Свяжитесь с <span class="gradient-text">нами</span></h2>
+                    <p class="section__description">
+                        Мы всегда на связи и готовы ответить на ваши вопросы
+                    </p>
+                </div>
+                
+                <div class="contacts__content">
+                    <div class="contacts__info" data-aos="fade-right">
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">Telegram</h4>
+                                <a href="https://t.me/mathematika20" target="_blank" class="contact-item__link">
+                                    @mathematika20
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">Instagram</h4>
+                                <a href="https://www.instagram.com/mathematika20" target="_blank" class="contact-item__link">
+                                    @mathematika20
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <i class="fab fa-vk"></i>
+                            </div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">ВКонтакте</h4>
+                                <a href="https://vk.com/mathematika20" target="_blank" class="contact-item__link">
+                                    vk.com/mathematika20
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-item__icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-item__content">
+                                <h4 class="contact-item__title">Время работы</h4>
+                                <p class="contact-item__text">
+                                    Пн-Сб: 10:00 - 20:00<br>
+                                    Вс: выходной
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contacts__map" data-aos="fade-left">
+                        <div class="map-placeholder" id="map">
+                            <div class="map-placeholder__content">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Здесь будет Яндекс.Карта</p>
+                                <small>Добавьте координаты вашего местоположения</small>
+                            </div>
+                        </div>
+                        <!-- 
+                        Для добавления реальной карты раскомментируйте и замените YOUR_API_KEY:
+                        <div id="yandex-map" style="width: 100%; height: 400px;"></div>
+                        <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documents Section -->
+        <section class="documents section" id="documents">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">Документы</span>
+                    <h2 class="section__title">Правовая <span class="gradient-text">информация</span></h2>
+                    <p class="section__description">
+                        Прозрачность и честность — наши главные принципы
+                    </p>
+                </div>
+                
+                <div class="documents__grid" data-aos="fade-up">
+                    <a href="pages/offer.html" class="document-card">
+                        <div class="document-card__icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3 class="document-card__title">Публичная оферта</h3>
+                        <p class="document-card__description">
+                            Договор на оказание образовательных услуг
+                        </p>
+                        <span class="document-card__link">
+                            Читать <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                    
+                    <a href="pages/privacy.html" class="document-card">
+                        <div class="document-card__icon">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h3 class="document-card__title">Политика конфиденциальности</h3>
+                        <p class="document-card__description">
+                            Как мы защищаем ваши персональные данные
+                        </p>
+                        <span class="document-card__link">
+                            Читать <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                    
+                    <a href="pages/refund.html" class="document-card">
+                        <div class="document-card__icon">
+                            <i class="fas fa-rotate-left"></i>
+                        </div>
+                        <h3 class="document-card__title">Политика возврата</h3>
+                        <p class="document-card__description">
+                            Условия возврата денежных средств
+                        </p>
+                        <span class="document-card__link">
+                            Читать <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                    
+                    <div class="document-card document-card--info">
+                        <div class="document-card__icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="document-card__title">Реквизиты ИП</h3>
+                        <div class="document-card__details">
+                            <p><strong>ИП:</strong> [ФИО]</p>
+                            <p><strong>ИНН:</strong> [номер]</p>
+                            <p><strong>ОГРНИП:</strong> [номер]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__main">
+                    <a href="#" class="footer__logo">
+                        <img src="assets/logo_trimmed.png" alt="МАТЕМАТИКА 2.0" class="footer__logo-img">
+                    </a>
+                    <p class="footer__description">
+                        Пространство математического мышления — место, где математика 
+                        раскрывается как язык понимания мира.
+                    </p>
+                    <div class="footer__socials">
+                        <a href="https://t.me/mathematikaa20" target="_blank" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mathematika20" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://vk.com/mathematika20" target="_blank" aria-label="VKontakte">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4 class="footer__title">Навигация</h4>
+                        <ul class="footer__list">
+                            <li><a href="#about">О нас</a></li>
+                            <li><a href="#programs">Программы</a></li>
+                            <li><a href="#pricing">Стоимость</a></li>
+                            <li><a href="#reviews">Отзывы</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4 class="footer__title">Документы</h4>
+                        <ul class="footer__list">
+                            <li><a href="pages/offer.html">Публичная оферта</a></li>
+                            <li><a href="pages/privacy.html">Политика конфиденциальности</a></li>
+                            <li><a href="pages/refund.html">Политика возврата</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__column">
+                        <h4 class="footer__title">Контакты</h4>
+                        <ul class="footer__list footer__list--contacts">
+                            <li>
+                                <i class="fab fa-telegram"></i>
+                                <a href="https://t.me/mathematika20">@mathematika20</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Пн-Сб: 10:00 - 20:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2024 МАТЕМАТИКА 2.0. Все права защищены.
+                </p>
+                <p class="footer__legal">
+                    ИП [ФИО] | ИНН [номер] | ОГРНИП [номер]
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
