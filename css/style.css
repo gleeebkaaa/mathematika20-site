@@ -962,7 +962,7 @@ button {
 }
 
 /* Позиции узлов - фиксированы в пикселях для совпадения с SVG (viewBox 800x700) */
-.trial__node--1 { top: 30px; left: 300px; }
+.trial__node--1 { top: 10px; left: 300px; }
 .trial__node--2 { top: 150px; right: 0; left: auto; }
 .trial__node--3 { top: 500px; right: 50px; left: auto; }
 .trial__node--4 { top: 500px; left: 0; }
