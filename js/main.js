@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initReviewsSlider();
     initAOS();
     initParticles();
+    initTrialAnimation();
 });
 
 /* ============================================
@@ -472,6 +473,33 @@ function showCookieConsent() {
             banner.remove();
         });
     }
+}
+
+/* ============================================
+   Trial Section Animation
+   ============================================ */
+function initTrialAnimation() {
+    const trialBtn = document.querySelector('.trial__center-card .btn--primary');
+    if (!trialBtn) return;
+    
+    // Функция мигания кнопки
+    function flashButton() {
+        trialBtn.classList.add('btn--flash');
+        setTimeout(() => {
+            trialBtn.classList.remove('btn--flash');
+        }, 500);
+    }
+    
+    // Кнопка мигает 1 раз в 5 секунд когда последняя точка достигает
+    // Первая точка: старт 0s, длительность 5s = достигает в 5s
+    // Последняя точка: старт 4s, длительность 5s = достигает в 9s
+    
+    // Мигаем когда последняя точка достигает (через 9 секунд первый раз)
+    setTimeout(() => {
+        flashButton();
+        // Потом каждые 5 секунд (цикл анимации)
+        setInterval(flashButton, 5000);
+    }, 9000);
 }
 
 console.log('МАТЕМАТИКА 2.0 - Сайт загружен успешно! 📐');

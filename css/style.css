@@ -786,6 +786,264 @@ button {
 }
 
 /* ============================================
+   Trial Lesson Section
+   ============================================ */
+.trial__orbit-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 700px;
+    margin: 0 auto;
+}
+
+.trial__web {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.trial__web-line {
+    stroke: var(--primary-light);
+    stroke-width: 2;
+    stroke-dasharray: 8 4;
+    opacity: 0.4;
+}
+
+.trial__web-flow {
+    stroke-width: 3;
+    opacity: 0.7;
+}
+
+.trial__flow-dot {
+    fill: var(--primary-dark);
+}
+
+.trial__flow-dot--1 { fill: #7ba3e8; }
+.trial__flow-dot--2 { fill: #8bb0f0; }
+.trial__flow-dot--3 { fill: #6b9be0; }
+.trial__flow-dot--4 { fill: #9bbdf5; }
+.trial__flow-dot--5 { fill: #7ba3e8; }
+
+.trial__flow-dot {
+    fill: var(--primary-dark);
+}
+
+/* Мигание кнопки при достижении точки */
+.trial__card .btn--primary.btn--flash {
+    animation: btnFlash 0.3s ease-out;
+}
+
+@keyframes btnFlash {
+    0% { 
+        box-shadow: 0 0 20px rgba(123, 163, 232, 0.5), 0 4px 15px rgba(123, 163, 232, 0.3);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(123, 163, 232, 1), 0 0 60px rgba(123, 163, 232, 0.8), 0 4px 30px rgba(123, 163, 232, 0.6);
+        transform: scale(1.03);
+        background: rgba(255, 255, 255, 0.95);
+    }
+    100% { 
+        box-shadow: 0 0 20px rgba(123, 163, 232, 0.5), 0 4px 15px rgba(123, 163, 232, 0.3);
+        transform: scale(1);
+    }
+}
+
+.trial__center-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.trial__card {
+    background: var(--gradient-primary);
+    padding: 2rem 2.5rem;
+    border-radius: var(--radius-xl);
+    color: var(--text-color);
+    text-align: center;
+    width: 280px;
+    box-shadow: var(--shadow-xl);
+}
+
+.trial__card-badge {
+    display: inline-block;
+    padding: 0.4rem 1.25rem;
+    background: white;
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.75rem;
+}
+
+.trial__card-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.trial__card-list {
+    text-align: left;
+    margin-bottom: 1.25rem;
+}
+
+.trial__card-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    font-size: 0.875rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.trial__card-list li:last-child {
+    border-bottom: none;
+}
+
+.trial__card-list i {
+    color: var(--primary-dark);
+    font-size: 1rem;
+}
+
+.trial__card .btn--primary {
+    background: white;
+    color: var(--primary-dark);
+    box-shadow: 0 0 15px rgba(123, 163, 232, 0.4), 0 4px 12px rgba(123, 163, 232, 0.2);
+    padding: 0.75rem 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.trial__card .btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(123, 163, 232, 0.7), 0 6px 20px rgba(123, 163, 232, 0.4);
+}
+
+/* Узлы вокруг */
+.trial__node {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    z-index: 5;
+    max-width: 200px;
+    transition: var(--transition);
+}
+
+.trial__node:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+.trial__node--1:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+.trial__node--2:hover,
+.trial__node--3:hover,
+.trial__node--4:hover,
+.trial__node--5:hover {
+    transform: scale(1.05);
+}
+
+.trial__node-icon {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    color: var(--text-color);
+    font-size: 1.25rem;
+    border-radius: var(--radius-full);
+}
+
+.trial__node-content h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.trial__node-content p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+/* Позиции узлов */
+.trial__node--1 { top: 0; left: 50%; transform: translateX(-50%); }
+.trial__node--2 { top: 18%; right: 0; }
+.trial__node--3 { bottom: 10%; right: 5%; }
+.trial__node--4 { bottom: 10%; left: 5%; }
+.trial__node--5 { top: 18%; left: 0; }
+
+/* Мобильная версия */
+.trial__mobile {
+    display: none;
+}
+
+.trial__mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.trial__mobile-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.trial__mobile-item i {
+    color: var(--primary-dark);
+    font-size: 1.25rem;
+}
+
+.trial__mobile-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 900px) {
+    .trial__orbit-container {
+        display: none;
+    }
+    
+    .trial__mobile {
+        display: block;
+    }
+    
+    .trial__mobile .trial__card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .trial__mobile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
    Teacher Section
    ============================================ */
 .teacher {

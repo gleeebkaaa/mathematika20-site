@@ -46,6 +46,9 @@
                         <a href="#about" class="nav__link">О нас</a>
                     </li>
                     <li class="nav__item">
+                        <a href="#trial" class="nav__link">Пробное занятие</a>
+                    </li>
+                    <li class="nav__item">
                         <a href="#programs" class="nav__link">Программы</a>
                     </li>
                     <li class="nav__item">
@@ -123,23 +126,23 @@
                     <div class="hero__stats">
                         <div class="stat">
                             <div class="stat__value">
-                                <span class="stat__number" data-count="500">0</span>
+                                <span class="stat__number" data-count="190">0</span>
                                 <span class="stat__symbol">+</span>
                             </div>
                             <span class="stat__label">учеников</span>
                         </div>
                         <div class="stat">
                             <div class="stat__value">
-                                <span class="stat__number" data-count="5">0</span>
+                                <span class="stat__number" data-count="7">0</span>
                             </div>
                             <span class="stat__label">лет опыта</span>
                         </div>
                         <div class="stat">
                             <div class="stat__value">
-                                <span class="stat__number" data-count="98">0</span>
-                                <span class="stat__symbol">%</span>
+                                <span class="stat__number" data-count="75">0</span>
+                                <span class="stat__symbol">+</span>
                             </div>
-                            <span class="stat__label">успешных результатов</span>
+                            <span class="stat__label">баллов ОГЭ/ЕГЭ</span>
                         </div>
                     </div>
                 </div>
@@ -193,7 +196,7 @@
                         <div class="about__image-wrapper">
                             <img src="assets/about-photo.jpg" alt="Обучение математике" class="about__photo">
                             <div class="about__experience">
-                                <span class="about__experience-number">5+</span>
+                                <span class="about__experience-number">7+</span>
                                 <span class="about__experience-text">лет опыта</span>
                             </div>
                         </div>
@@ -258,6 +261,179 @@
             </div>
         </section>
 
+        <!-- Trial Lesson Section -->
+        <section class="trial section" id="trial">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__subtitle">Первый шаг</span>
+                    <h2 class="section__title">Бесплатное <span class="gradient-text">пробное занятие</span></h2>
+                    <p class="section__description">
+                        Пробное занятие — это первый шаг к понятной и уверенной математике. 
+                        На нём мы помогаем определить текущий уровень ребёнка и показать, 
+                        как можно двигаться дальше без перегрузки.
+                    </p>
+                </div>
+                
+                <div class="trial__orbit-container" data-aos="fade-up">
+                    <!-- SVG паутина - линии сходятся к кнопке -->
+                    <svg class="trial__web" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <!-- Градиент для линий - течение к центру -->
+                            <linearGradient id="flowGrad1" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="var(--primary-light)" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="var(--primary-dark)" stop-opacity="0.9"/>
+                            </linearGradient>
+                            <linearGradient id="flowGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="var(--primary-light)" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="var(--primary-dark)" stop-opacity="0.9"/>
+                            </linearGradient>
+                            <linearGradient id="flowGrad3" x1="100%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" stop-color="var(--primary-light)" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="var(--primary-dark)" stop-opacity="0.9"/>
+                            </linearGradient>
+                            <linearGradient id="flowGrad4" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="var(--primary-light)" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="var(--primary-dark)" stop-opacity="0.9"/>
+                            </linearGradient>
+                            <linearGradient id="flowGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--primary-light)" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="var(--primary-dark)" stop-opacity="0.9"/>
+                            </linearGradient>
+                            <!-- Фильтр свечения -->
+                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                <feMerge>
+                                    <feMergeNode in="blur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Внешнее кольцо -->
+                        <path class="trial__web-line" d="M400,80 L720,200 L650,550 L150,550 L80,200 Z" fill="none"/>
+                        
+                        <!-- Линии от элементов к кнопке с градиентом -->
+                        <line class="trial__web-flow" x1="400" y1="80" x2="400" y2="410" stroke="url(#flowGrad1)"/>
+                        <line class="trial__web-flow" x1="720" y1="200" x2="400" y2="410" stroke="url(#flowGrad2)"/>
+                        <line class="trial__web-flow" x1="650" y1="550" x2="400" y2="410" stroke="url(#flowGrad3)"/>
+                        <line class="trial__web-flow" x1="150" y1="550" x2="400" y2="410" stroke="url(#flowGrad4)"/>
+                        <line class="trial__web-flow" x1="80" y1="200" x2="400" y2="410" stroke="url(#flowGrad5)"/>
+                        
+                        <!-- Анимированные точки, бегущие к кнопке по очереди -->
+                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
+                            <animateMotion dur="5s" repeatCount="indefinite" path="M400,80 L400,410" begin="0s"/>
+                        </circle>
+                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
+                            <animateMotion dur="5s" repeatCount="indefinite" path="M720,200 L400,410" begin="1s"/>
+                        </circle>
+                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
+                            <animateMotion dur="5s" repeatCount="indefinite" path="M650,550 L400,410" begin="2s"/>
+                        </circle>
+                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
+                            <animateMotion dur="5s" repeatCount="indefinite" path="M150,550 L400,410" begin="3s"/>
+                        </circle>
+                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
+                            <animateMotion dur="5s" repeatCount="indefinite" path="M80,200 L400,410" begin="4s"/>
+                        </circle>
+                    </svg>
+                    
+                    <!-- Центральная карточка -->
+                    <div class="trial__center-card">
+                        <div class="trial__card">
+                            <div class="trial__card-badge">Бесплатно</div>
+                            <h3 class="trial__card-title">Что вы получаете</h3>
+                            
+                            <ul class="trial__card-list">
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Чёткое понимание ситуации</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Рекомендации без нагрузки</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Понимание шагов и сроков</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary btn--lg btn--block">
+                                <i class="fab fa-telegram"></i>
+                                Записаться
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Элементы вокруг -->
+                    <div class="trial__node trial__node--1">
+                        <div class="trial__node-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="trial__node-content">
+                            <h4>Определение уровня</h4>
+                            <p>Какие темы даются легко, а где сложности</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trial__node trial__node--2">
+                        <div class="trial__node-icon"><i class="fas fa-search"></i></div>
+                        <div class="trial__node-content">
+                            <h4>Поиск причин</h4>
+                            <p>Выявляем пробелы в знаниях</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trial__node trial__node--3">
+                        <div class="trial__node-icon"><i class="fas fa-puzzle-piece"></i></div>
+                        <div class="trial__node-content">
+                            <h4>Логика математики</h4>
+                            <p>Как темы связаны между собой</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trial__node trial__node--4">
+                        <div class="trial__node-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="trial__node-content">
+                            <h4>Рекомендации</h4>
+                            <p>Как улучшить результаты</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trial__node trial__node--5">
+                        <div class="trial__node-icon"><i class="fas fa-users-cog"></i></div>
+                        <div class="trial__node-content">
+                            <h4>Подбор формата</h4>
+                            <p>Группа, пара или индивидуально</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Мобильная версия -->
+                <div class="trial__mobile" data-aos="fade-up">
+                    <div class="trial__card">
+                        <div class="trial__card-badge">Бесплатно</div>
+                        <h3 class="trial__card-title">Что вы получаете</h3>
+                        <ul class="trial__card-list">
+                            <li><i class="fas fa-check-circle"></i><span>Чёткое понимание ситуации</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Рекомендации без нагрузки</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Понимание шагов и сроков</span></li>
+                        </ul>
+                        <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary btn--lg btn--block">
+                            <i class="fab fa-telegram"></i>
+                            Записаться
+                        </a>
+                    </div>
+                    
+                    <div class="trial__mobile-grid">
+                        <div class="trial__mobile-item"><i class="fas fa-chart-line"></i><span>Определение уровня</span></div>
+                        <div class="trial__mobile-item"><i class="fas fa-search"></i><span>Поиск причин</span></div>
+                        <div class="trial__mobile-item"><i class="fas fa-puzzle-piece"></i><span>Логика математики</span></div>
+                        <div class="trial__mobile-item"><i class="fas fa-lightbulb"></i><span>Рекомендации</span></div>
+                        <div class="trial__mobile-item"><i class="fas fa-users-cog"></i><span>Подбор формата</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- About Teacher Section -->
         <section class="teacher section" id="teacher">
             <div class="container">
@@ -268,33 +444,33 @@
                         
                         <div class="teacher__details">
                             <p class="teacher__bio">
-                                Привет! Я — основатель математического центра «МАТЕМАТИКА 2.0». 
-                                Моя миссия — показать, что математика может быть увлекательной 
-                                и понятной для каждого.
+                                Привет! Я — Валерия Дмитриевна, основатель математического центра «МАТЕМАТИКА 2.0». 
+                                Под моим руководством ученики стабильно сдают ОГЭ и ЕГЭ на высокие баллы 75+ 
+                                и выходят на оценки 4–5.
                             </p>
                             
                             <div class="teacher__credentials">
                                 <div class="credential">
                                     <i class="fas fa-graduation-cap"></i>
-                                    <span>Высшее педагогическое образование</span>
-                                </div>
-                                <div class="credential">
-                                    <i class="fas fa-certificate"></i>
-                                    <span>Индивидуальный предприниматель</span>
+                                    <span>РЭУ им. Плеханова + педагогическое образование по методике преподавания математики</span>
                                 </div>
                                 <div class="credential">
                                     <i class="fas fa-clock"></i>
-                                    <span>Более 5 лет преподавательского опыта</span>
+                                    <span>7 лет преподавательского опыта</span>
                                 </div>
                                 <div class="credential">
                                     <i class="fas fa-users"></i>
-                                    <span>Более 500 успешных учеников</span>
+                                    <span>Более 190 успешных учеников</span>
+                                </div>
+                                <div class="credential">
+                                    <i class="fas fa-award"></i>
+                                    <span>Результаты ОГЭ/ЕГЭ 75+ баллов</span>
                                 </div>
                             </div>
                             
                             <blockquote class="teacher__quote">
-                                «Математика — это не про формулы, это про способ мышления. 
-                                Моя задача — научить вас думать, а не запоминать.»
+                                «За годы работы выстроена система, которая помогает улучшать успеваемость 
+                                и уверенность учеников уже в первые месяцы занятий.»
                             </blockquote>
                         </div>
                     </div>
