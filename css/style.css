@@ -932,16 +932,6 @@ button {
 
 .trial__node:hover {
     box-shadow: var(--shadow-xl);
-}
-
-.trial__node--1:hover {
-    transform: translateX(-50%) scale(1.05);
-}
-
-.trial__node--2:hover,
-.trial__node--3:hover,
-.trial__node--4:hover,
-.trial__node--5:hover {
     transform: scale(1.05);
 }
 
@@ -971,12 +961,12 @@ button {
     line-height: 1.4;
 }
 
-/* Позиции узлов - фиксированы в пикселях для совпадения с SVG */
-.trial__node--1 { top: 20px; left: 400px; transform: translateX(-50%); }
-.trial__node--2 { top: 160px; left: 580px; }
-.trial__node--3 { top: 500px; left: 500px; }
+/* Позиции узлов - фиксированы в пикселях для совпадения с SVG (viewBox 800x700) */
+.trial__node--1 { top: 30px; left: 300px; }
+.trial__node--2 { top: 150px; right: 0; left: auto; }
+.trial__node--3 { top: 500px; right: 50px; left: auto; }
 .trial__node--4 { top: 500px; left: 0; }
-.trial__node--5 { top: 160px; left: 0; }
+.trial__node--5 { top: 150px; left: 0; }
 
 /* Мобильная версия */
 .trial__mobile {
