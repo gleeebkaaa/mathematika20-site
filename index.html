@@ -191,7 +191,7 @@
                 <div class="about__content">
                     <div class="about__image" data-aos="fade-right">
                         <div class="about__image-wrapper">
-                            <div class="about__image-bg"></div>
+                            <img src="assets/about-photo.jpg" alt="Обучение математике" class="about__photo">
                             <div class="about__experience">
                                 <span class="about__experience-number">5+</span>
                                 <span class="about__experience-text">лет опыта</span>
@@ -301,13 +301,11 @@
                     
                     <div class="teacher__visual" data-aos="fade-left">
                         <div class="teacher__image-wrapper">
-                            <div class="teacher__image-bg"></div>
+                            <!-- Фото основателя: замените src на путь к фото -->
+                            <img src="assets/founder-photo.jpeg" alt="Основатель МАТЕМАТИКА 2.0" class="teacher__photo">
                             <div class="teacher__socials">
                                 <a href="https://t.me/mathematikaa20" target="_blank" class="social-link">
                                     <i class="fab fa-telegram"></i>
-                                </a>
-                                <a href="https://www.instagram.com/mathematika20" target="_blank" class="social-link">
-                                    <i class="fab fa-instagram"></i>
                                 </a>
                                 <a href="https://vk.com/mathematika20" target="_blank" class="social-link">
                                     <i class="fab fa-vk"></i>
@@ -487,6 +485,29 @@
                     </p>
                 </div>
                 
+                <!-- Video Review -->
+                <div class="reviews__video" data-aos="fade-up">
+                    <div class="video-review">
+                        <div class="video-review__container">
+                            <!-- Здесь будет видео-отзыв -->
+                            <video 
+                                class="video-review__player" 
+                                controls 
+                                poster="assets/video-poster.jpg"
+                                preload="metadata">
+                                <source src="assets/review-video.mp4" type="video/mp4">
+                                Ваш браузер не поддерживает видео
+                            </video>
+                            <div class="video-review__overlay" id="video-overlay">
+                                <button class="video-review__play" id="play-video">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <p class="video-review__label">Видео-отзыв от ученицы</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="reviews__slider" data-aos="fade-up">
                     <div class="reviews__track" id="reviews-track">
                         <div class="review-card">
@@ -588,6 +609,14 @@
                         </button>
                     </div>
                 </div>
+                
+                <!-- Yandex Reviews Button -->
+                <div class="reviews__yandex" data-aos="fade-up">
+                    <a href="https://clck.ru/3RQZzL" target="_blank" class="btn btn--outline btn--lg">
+                        <i class="fas fa-star"></i>
+                        Больше отзывов на Яндекс.Картах
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -622,9 +651,6 @@
                         <div class="cta__social-links">
                             <a href="https://t.me/mathematikaa20" target="_blank">
                                 <i class="fab fa-telegram"></i>
-                            </a>
-                            <a href="https://www.instagram.com/mathematika20" target="_blank">
-                                <i class="fab fa-instagram"></i>
                             </a>
                             <a href="https://vk.com/mathematika20" target="_blank">
                                 <i class="fab fa-vk"></i>
@@ -662,18 +688,6 @@
                         
                         <div class="contact-item">
                             <div class="contact-item__icon">
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                            <div class="contact-item__content">
-                                <h4 class="contact-item__title">Instagram</h4>
-                                <a href="https://www.instagram.com/mathematika20" target="_blank" class="contact-item__link">
-                                    @mathematika20
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-item__icon">
                                 <i class="fab fa-vk"></i>
                             </div>
                             <div class="contact-item__content">
@@ -691,7 +705,8 @@
                             <div class="contact-item__content">
                                 <h4 class="contact-item__title">Время работы</h4>
                                 <p class="contact-item__text">
-                                    Пн-Сб: 10:00 - 20:00<br>
+                                    Пн-Пт: 13:00 - 20:00<br>
+                                    Сб: 10:00 - 16:00<br>
                                     Вс: выходной
                                 </p>
                             </div>
@@ -699,18 +714,27 @@
                     </div>
                     
                     <div class="contacts__map" data-aos="fade-left">
-                        <div class="map-placeholder" id="map">
-                            <div class="map-placeholder__content">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p>Здесь будет Яндекс.Карта</p>
-                                <small>Добавьте координаты вашего местоположения</small>
+                        <div class="map-card" id="map">
+                            <div class="map-card__preview">
+                                <img src="https://static-maps.yandex.ru/v1?lang=ru_RU&size=650,400&z=15&pt=37.617635,55.755814,pm2rdm&apikey=f3a0fe3a-b07e-4840-a1da-06f18b2ddf13" alt="Карта" class="map-card__image">
+                                <div class="map-card__overlay">
+                                    <a href="https://clck.ru/3RQZzL" target="_blank" class="map-card__btn">
+                                        <i class="fas fa-route"></i>
+                                        Построить маршрут
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="map-card__info">
+                                <div class="map-card__address">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Нажмите, чтобы открыть на Яндекс.Картах</span>
+                                </div>
+                                <a href="https://clck.ru/3RQZzL" target="_blank" class="btn btn--primary">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Открыть на карте
+                                </a>
                             </div>
                         </div>
-                        <!-- 
-                        Для добавления реальной карты раскомментируйте и замените YOUR_API_KEY:
-                        <div id="yandex-map" style="width: 100%; height: 400px;"></div>
-                        <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
-                        -->
                     </div>
                 </div>
             </div>
@@ -727,7 +751,7 @@
                     </p>
                 </div>
                 
-                <div class="documents__grid" data-aos="fade-up">
+                <div class="documents__grid documents__grid--5" data-aos="fade-up">
                     <a href="pages/offer.html" class="document-card">
                         <div class="document-card__icon">
                             <i class="fas fa-file-contract"></i>
@@ -754,6 +778,19 @@
                         </span>
                     </a>
                     
+                    <a href="pages/consent.html" class="document-card">
+                        <div class="document-card__icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="document-card__title">Согласие на обработку данных</h3>
+                        <p class="document-card__description">
+                            Согласие на обработку персональных данных
+                        </p>
+                        <span class="document-card__link">
+                            Читать <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </a>
+                    
                     <a href="pages/refund.html" class="document-card">
                         <div class="document-card__icon">
                             <i class="fas fa-rotate-left"></i>
@@ -773,9 +810,9 @@
                         </div>
                         <h3 class="document-card__title">Реквизиты ИП</h3>
                         <div class="document-card__details">
-                            <p><strong>ИП:</strong> [ФИО]</p>
-                            <p><strong>ИНН:</strong> [номер]</p>
-                            <p><strong>ОГРНИП:</strong> [номер]</p>
+                            <p><strong>ИП:</strong> Козлова Валерия Дмитриевна</p>
+                            <p><strong>ИНН:</strong> 771508195972</p>
+                            <p><strong>ОГРНИП:</strong> 324774600220831</p>
                         </div>
                     </div>
                 </div>
@@ -798,9 +835,6 @@
                     <div class="footer__socials">
                         <a href="https://t.me/mathematikaa20" target="_blank" aria-label="Telegram">
                             <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="https://www.instagram.com/mathematika20" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://vk.com/mathematika20" target="_blank" aria-label="VKontakte">
                             <i class="fab fa-vk"></i>
@@ -838,7 +872,7 @@
                             </li>
                             <li>
                                 <i class="fas fa-clock"></i>
-                                <span>Пн-Сб: 10:00 - 20:00</span>
+                                <span>Пн-Пт: 13:00 - 20:00, Сб: 10:00 - 16:00</span>
                             </li>
                         </ul>
                     </div>
@@ -850,7 +884,10 @@
                     © 2024 МАТЕМАТИКА 2.0. Все права защищены.
                 </p>
                 <p class="footer__legal">
-                    ИП [ФИО] | ИНН [номер] | ОГРНИП [номер]
+                    ИП Козлова В.Д. | ИНН 771508195972 | ОГРНИП 324774600220831
+                </p>
+                <p class="footer__developer">
+                    Powered by <a href="https://t.me/Wheres_themoney_Lebowski" target="_blank">Wheres_themoney_Lebowski</a>
                 </p>
             </div>
         </div>

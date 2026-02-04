@@ -12,9 +12,9 @@
     --primary-light: #c0d8ff;
     --primary-dark: #7ba3e8;
     
-    /* Secondary Colors */
-    --secondary-color: #ffeccb;
-    --secondary-light: #fff5e0;
+    /* Secondary Colors - Mint (replaced beige) */
+    --secondary-color: #d4f0ed;
+    --secondary-light: #e8f7f5;
     
     /* Accent Colors */
     --accent-color: #7ba3e8;
@@ -27,14 +27,14 @@
     
     /* Background Colors */
     --bg-color: #ffffff;
-    --bg-light: #fef9f3;
+    --bg-light: #f5f9fc;
     --bg-dark: #1a2a3a;
     --bg-card: #ffffff;
     
-    /* Gradients - Customer colors #ffeccb #a0c0fd */
-    --gradient-primary: linear-gradient(135deg, #a0c0fd 0%, #ffeccb 100%);
-    --gradient-hero: linear-gradient(135deg, #a0c0fd 0%, #ffeccb 100%);
-    --gradient-cta: linear-gradient(135deg, #a0c0fd 0%, #ffeccb 100%);
+    /* Gradients - Blue to Mint palette */
+    --gradient-primary: linear-gradient(135deg, #a0c0fd 0%, #d4f0ed 100%);
+    --gradient-hero: linear-gradient(135deg, #a0c0fd 0%, #d4f0ed 100%);
+    --gradient-cta: linear-gradient(135deg, #7ba3e8 0%, #a0c0fd 100%);
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -137,7 +137,7 @@ button {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #7090d0 0%, #c9a060 100%);
+    background: linear-gradient(135deg, #5a8fd4 0%, #4ca8a0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -691,6 +691,13 @@ button {
     aspect-ratio: 4/5;
     border-radius: var(--radius-xl);
     overflow: hidden;
+    background: var(--gradient-primary);
+}
+
+.about__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about__image-bg {
@@ -840,6 +847,14 @@ button {
     aspect-ratio: 3/4;
     border-radius: var(--radius-xl);
     overflow: hidden;
+    background: var(--gradient-primary);
+}
+
+.teacher__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
 }
 
 .teacher__image-bg {
@@ -1145,6 +1160,83 @@ button {
 /* ============================================
    Reviews Section
    ============================================ */
+.reviews__video {
+    margin-bottom: 3rem;
+}
+
+.video-review {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.video-review__container {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: var(--bg-dark);
+    aspect-ratio: 16/9;
+}
+
+.video-review__player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-review__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 42, 58, 0.7);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.video-review__overlay:hover {
+    background: rgba(26, 42, 58, 0.5);
+}
+
+.video-review__overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.video-review__play {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    color: white;
+    font-size: 1.5rem;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    margin-bottom: 1rem;
+}
+
+.video-review__play:hover {
+    transform: scale(1.1);
+}
+
+.video-review__label {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.reviews__yandex {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 .reviews__slider {
     position: relative;
     overflow: hidden;
@@ -1435,6 +1527,91 @@ button {
     box-shadow: var(--shadow-lg);
 }
 
+.map-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.map-card__preview {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.map-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.8);
+    transition: var(--transition);
+}
+
+.map-card:hover .map-card__image {
+    filter: saturate(1);
+    transform: scale(1.02);
+}
+
+.map-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 42, 58, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.map-card:hover .map-card__overlay {
+    opacity: 1;
+}
+
+.map-card__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: white;
+    color: var(--primary-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.map-card__btn:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+
+.map-card__btn i {
+    font-size: 1.25rem;
+}
+
+.map-card__info {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: var(--bg-light);
+}
+
+.map-card__address {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+    font-size: 0.9375rem;
+}
+
+.map-card__address i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
 .map-placeholder {
     width: 100%;
     height: 400px;
@@ -1476,6 +1653,10 @@ button {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
+}
+
+.documents__grid--5 {
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .document-card {
@@ -1661,9 +1842,19 @@ button {
 }
 
 .footer__copyright,
-.footer__legal {
+.footer__legal,
+.footer__developer {
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__developer a {
+    color: var(--primary-light);
+    transition: var(--transition-fast);
+}
+
+.footer__developer a:hover {
+    color: white;
 }
 
 /* ============================================
@@ -1712,6 +1903,16 @@ button {
     }
     
     .documents__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .documents__grid--5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .documents__grid--5 {
         grid-template-columns: repeat(2, 1fr);
     }
 }
