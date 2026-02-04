@@ -790,17 +790,17 @@ button {
    ============================================ */
 .trial__orbit-container {
     position: relative;
-    width: 100%;
-    max-width: 800px;
+    width: 800px;
     height: 700px;
     margin: 0 auto;
 }
 
 .trial__web {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 700px;
     z-index: 1;
 }
 
@@ -815,16 +815,6 @@ button {
     stroke-width: 3;
     opacity: 0.7;
 }
-
-.trial__flow-dot {
-    fill: var(--primary-dark);
-}
-
-.trial__flow-dot--1 { fill: #7ba3e8; }
-.trial__flow-dot--2 { fill: #8bb0f0; }
-.trial__flow-dot--3 { fill: #6b9be0; }
-.trial__flow-dot--4 { fill: #9bbdf5; }
-.trial__flow-dot--5 { fill: #7ba3e8; }
 
 .trial__flow-dot {
     fill: var(--primary-dark);
@@ -981,12 +971,12 @@ button {
     line-height: 1.4;
 }
 
-/* Позиции узлов */
-.trial__node--1 { top: 0; left: 50%; transform: translateX(-50%); }
-.trial__node--2 { top: 18%; right: 0; }
-.trial__node--3 { bottom: 10%; right: 5%; }
-.trial__node--4 { bottom: 10%; left: 5%; }
-.trial__node--5 { top: 18%; left: 0; }
+/* Позиции узлов - фиксированы в пикселях для совпадения с SVG */
+.trial__node--1 { top: 20px; left: 400px; transform: translateX(-50%); }
+.trial__node--2 { top: 160px; left: 580px; }
+.trial__node--3 { top: 500px; left: 500px; }
+.trial__node--4 { top: 500px; left: 0; }
+.trial__node--5 { top: 160px; left: 0; }
 
 /* Мобильная версия */
 .trial__mobile {
