@@ -587,6 +587,12 @@ button {
     animation-delay: -4s;
 }
 
+.floating-card--4 {
+    bottom: 35%;
+    right: 5%;
+    animation-delay: -6s;
+}
+
 @keyframes floatCard {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
