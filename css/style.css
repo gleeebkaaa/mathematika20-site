@@ -433,7 +433,7 @@ button {
     align-items: center;
 }
 
-.hero__badge {
+.hero__badge, .hero__badge-center {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -444,6 +444,21 @@ button {
     font-weight: 600;
     border-radius: var(--radius-full);
     margin-bottom: 1.5rem;
+}
+
+.hero__badge-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    box-shadow: var(--shadow-lg);
+    white-space: nowrap;
+    margin-bottom: 0;
 }
 
 .hero__badge i {
@@ -893,7 +908,7 @@ button {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     font-size: 0.875rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
