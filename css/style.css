@@ -2186,78 +2186,60 @@ button {
     .hero__container {
         grid-template-columns: 1fr;
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
     }
     
     .hero__content {
         order: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .hero__badge {
-        order: -2;
     }
     
     .hero__visual {
-        order: -1;
-        position: relative;
-        margin: 0 auto;
+        order: 1;
+        margin: 0 auto 1rem;
         width: 100%;
-        max-width: 400px;
+        max-width: 340px;
     }
     
     .hero__image-wrapper {
-        position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 1rem;
+        gap: 0.75rem;
+        aspect-ratio: auto;
+        height: auto;
+    }
+    
+    .hero__image-wrapper::before {
+        display: none;
     }
     
     .hero__image-wrapper .floating-card {
         position: static;
-        margin: 0;
         animation: none;
+        justify-content: center;
     }
     
     .hero__image-wrapper .math-formulas {
         display: none;
     }
     
-    .hero__title {
-        order: 0;
-    }
-    
     .hero__description {
-        margin: 0 auto;
-        order: 1;
+        margin: 0 auto 2rem;
     }
     
     .hero__actions {
         justify-content: center;
-        order: 2;
     }
     
     .hero__stats {
         justify-content: center;
         width: 100%;
-        order: 3;
     }
     
     .hero {
-        min-height: auto;
-        padding-bottom: 5rem;
+        padding-bottom: 6rem;
     }
     
     .hero__scroll {
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 1.5rem;
     }
     
     .about__content {
@@ -2407,9 +2389,6 @@ button {
         width: 100%;
     }
     
-    .hero__image-wrapper {
-        grid-template-columns: 1fr;
-    }
     
     .cta__content {
         padding: 2.5rem 1.5rem;
