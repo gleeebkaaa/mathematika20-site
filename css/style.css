@@ -2192,33 +2192,36 @@ button {
         order: 2;
     }
     
+    .hero__badge--lg {
+        position: absolute;
+        top: 6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        white-space: nowrap;
+    }
+    
     .hero__visual {
         order: 1;
-        margin: 0 auto 1rem;
+        margin: 3rem auto 0;
         width: 100%;
-        max-width: 340px;
+        max-width: 350px;
     }
     
     .hero__image-wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-        aspect-ratio: auto;
-        height: auto;
+        height: 280px;
     }
     
-    .hero__image-wrapper::before {
-        display: none;
+    .floating-card {
+        padding: 0.7rem 1rem;
     }
     
-    .hero__image-wrapper .floating-card {
-        position: static;
-        animation: none;
-        justify-content: center;
+    .floating-card span {
+        font-size: 0.8rem;
     }
     
-    .hero__image-wrapper .math-formulas {
-        display: none;
+    .floating-card i {
+        font-size: 1.2rem;
     }
     
     .hero__description {
