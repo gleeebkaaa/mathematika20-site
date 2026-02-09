@@ -2186,44 +2186,62 @@ button {
     .hero__container {
         grid-template-columns: 1fr;
         text-align: center;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
     
     .hero__content {
-        order: 1;
-        position: relative;
-        z-index: 2;
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .hero__badge {
+        order: -2;
     }
     
     .hero__visual {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0.3;
-        z-index: 1;
-        pointer-events: none;
+        order: -1;
+        position: relative;
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    
+    .hero__image-wrapper {
+        height: 250px;
+        position: relative;
+    }
+    
+    .hero__title {
+        order: 0;
     }
     
     .hero__description {
-        margin: 0 auto 2rem;
+        margin: 0 auto;
+        order: 1;
     }
     
     .hero__actions {
         justify-content: center;
+        order: 2;
     }
     
     .hero__stats {
         justify-content: center;
         width: 100%;
+        order: 3;
     }
     
     .hero {
-        min-height: 100vh;
+        min-height: auto;
+        padding-bottom: 3rem;
     }
     
-    .hero__bg {
-        height: 100%;
+    .hero__scroll {
+        position: relative;
+        margin-top: 2rem;
     }
     
     .about__content {
@@ -2335,16 +2353,36 @@ button {
     }
     
     .floating-card {
-        padding: 0.6rem 0.9rem;
-        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
     }
     
     .floating-card i {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .floating-card span {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .floating-card--1 {
+        top: 5%;
+        left: 5%;
+    }
+    
+    .floating-card--2 {
+        top: 5%;
+        right: 5%;
+    }
+    
+    .floating-card--3 {
+        bottom: 5%;
+        left: 5%;
+    }
+    
+    .floating-card--4 {
+        bottom: 5%;
+        right: 5%;
     }
     
     .review-card {
