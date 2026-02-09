@@ -2189,11 +2189,12 @@ button {
     }
     
     .hero__content {
-        order: 2;
+        order: 1;
     }
     
     .hero__visual {
-        order: 1;
+        order: 2;
+        display: none;
     }
     
     .hero__description {
@@ -2207,6 +2208,14 @@ button {
     .hero__stats {
         justify-content: center;
         width: 100%;
+    }
+    
+    .hero {
+        min-height: 100vh;
+    }
+    
+    .hero__bg {
+        height: 100%;
     }
     
     .about__content {
