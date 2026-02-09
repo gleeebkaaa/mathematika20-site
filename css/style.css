@@ -2206,12 +2206,26 @@ button {
         order: -1;
         position: relative;
         margin: 0 auto;
-        max-width: 350px;
+        width: 100%;
+        max-width: 400px;
     }
     
     .hero__image-wrapper {
-        height: 250px;
         position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .hero__image-wrapper .floating-card {
+        position: static;
+        margin: 0;
+        animation: none;
+    }
+    
+    .hero__image-wrapper .math-formulas {
+        display: none;
     }
     
     .hero__title {
@@ -2236,12 +2250,14 @@ button {
     
     .hero {
         min-height: auto;
-        padding-bottom: 3rem;
+        padding-bottom: 5rem;
     }
     
     .hero__scroll {
-        position: relative;
-        margin-top: 2rem;
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .about__content {
@@ -2352,38 +2368,6 @@ button {
         font-size: 1.25rem;
     }
     
-    .floating-card {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.75rem;
-    }
-    
-    .floating-card i {
-        font-size: 1rem;
-    }
-    
-    .floating-card span {
-        font-size: 0.75rem;
-    }
-    
-    .floating-card--1 {
-        top: 5%;
-        left: 5%;
-    }
-    
-    .floating-card--2 {
-        top: 5%;
-        right: 5%;
-    }
-    
-    .floating-card--3 {
-        bottom: 5%;
-        left: 5%;
-    }
-    
-    .floating-card--4 {
-        bottom: 5%;
-        right: 5%;
-    }
     
     .review-card {
         flex: 0 0 calc(100% - 2rem);
@@ -2421,6 +2405,10 @@ button {
     
     .hero__actions .btn {
         width: 100%;
+    }
+    
+    .hero__image-wrapper {
+        grid-template-columns: 1fr;
     }
     
     .cta__content {
