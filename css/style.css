@@ -1899,6 +1899,7 @@ button {
     justify-content: space-between;
     gap: 1rem;
     background: var(--bg-light);
+    flex-wrap: wrap;
 }
 
 .map-card__address {
