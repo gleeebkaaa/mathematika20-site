@@ -306,13 +306,18 @@ button {
     transition: var(--transition);
     cursor: pointer;
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .btn--primary {
     background: var(--gradient-primary);
+    background-size: 110% 100%;
+    background-position: left center;
     color: #2d3748;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(160, 192, 253, 0.4);
+    border: none;
+    outline: none;
 }
 
 .btn--primary:hover {
@@ -587,25 +592,25 @@ button {
 }
 
 .floating-card--1 {
-    top: 10%;
+    top: 22%;
     left: 0;
     animation-delay: 0s;
 }
 
 .floating-card--2 {
-    top: 10%;
+    top: 22%;
     right: 0;
     animation-delay: -2s;
 }
 
 .floating-card--3 {
-    bottom: 10%;
+    bottom: 22%;
     left: 0;
     animation-delay: -4s;
 }
 
 .floating-card--4 {
-    bottom: 10%;
+    bottom: 22%;
     right: 0;
     animation-delay: -6s;
 }
@@ -950,6 +955,7 @@ button {
     box-shadow: var(--shadow-lg);
     z-index: 5;
     max-width: 200px;
+    min-height: 88px;
     transition: var(--transition);
 }
 
@@ -985,7 +991,7 @@ button {
 }
 
 /* Позиции узлов - фиксированы в пикселях для совпадения с SVG (viewBox 800x700) */
-.trial__node--1 { top: -10px; left: 300px; }
+.trial__node--1 { top: -55px; left: 300px; }
 .trial__node--2 { top: 150px; right: 0; left: auto; }
 .trial__node--3 { top: 500px; right: 50px; left: auto; }
 .trial__node--4 { top: 500px; left: 0; }
@@ -1169,8 +1175,14 @@ button {
     margin: 0 auto;
 }
 
+.section__title--tight {
+    line-height: 1.2;
+}
+
 .program-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background: white;
     padding: 2rem;
     border-radius: var(--radius-xl);
@@ -1242,6 +1254,19 @@ button {
 .program-card__features {
     text-align: left;
     margin-bottom: 1.5rem;
+    flex: 1;
+    min-height: 10rem;
+}
+
+.program-card__btn {
+    margin-top: auto;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.625rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .program-card__features li {
@@ -1266,10 +1291,14 @@ button {
     color: #fbbf24;
 }
 
-.program-card--featured .btn--primary {
+.program-card--featured .btn--primary,
+.program-card--featured .program-card__btn {
     background: white;
     color: var(--primary-dark);
     box-shadow: none;
+    border: 2px solid transparent;
+    min-height: 2.75rem;
+    padding: 0.625rem 1.5rem;
 }
 
 .program-card--featured .btn--primary:hover {
@@ -1292,6 +1321,8 @@ button {
 
 .pricing-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background: white;
     padding: 2.5rem;
     border-radius: var(--radius-xl);
@@ -1308,11 +1339,18 @@ button {
 
 .pricing-card--featured {
     border-color: var(--primary-color);
-    transform: scale(1.05);
+}
+
+.pricing-card--featured .btn--primary,
+.pricing-card--featured .pricing-card__cta.btn--primary {
+    border: 2px solid transparent;
+    min-height: 2.75rem;
+    padding: 0.625rem 1.5rem;
+    box-sizing: border-box;
 }
 
 .pricing-card--featured:hover {
-    transform: scale(1.05) translateY(-8px);
+    transform: translateY(-8px);
 }
 
 .pricing-card__badge {
@@ -1376,6 +1414,19 @@ button {
 .pricing-card__features {
     text-align: left;
     margin-bottom: 2rem;
+    flex: 1;
+    min-height: 11rem;
+}
+
+.pricing-card__cta {
+    margin-top: auto;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.625rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .pricing-card__features li {
@@ -1386,6 +1437,7 @@ button {
     color: var(--text-light);
     padding: 0.5rem 0;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
 }
 
 .pricing-card__features li:last-child {
@@ -1394,6 +1446,18 @@ button {
 
 .pricing-card__features li i {
     color: var(--accent-color);
+}
+
+.price-inline {
+    white-space: nowrap;
+}
+
+.price-rub,
+.price-currency {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .pricing__note {
@@ -1786,9 +1850,14 @@ button {
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
+    height: 100%;
+    min-height: 280px;
 }
 
 .map-card {
+    display: block;
+    height: 100%;
+    text-decoration: none;
     background: white;
     border-radius: var(--radius-xl);
     overflow: hidden;
@@ -1797,7 +1866,8 @@ button {
 
 .map-card__preview {
     position: relative;
-    height: 250px;
+    height: 100%;
+    min-height: 280px;
     overflow: hidden;
 }
 
