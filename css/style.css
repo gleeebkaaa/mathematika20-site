@@ -1041,6 +1041,10 @@ button {
     display: none;
 }
 
+.trial__mobile-cta {
+    margin-top: 1.5rem;
+}
+
 .trial__mobile-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
