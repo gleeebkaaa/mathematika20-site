@@ -1600,6 +1600,19 @@ button {
     font-weight: 500;
 }
 
+.video-review__error {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius);
+    max-width: 320px;
+}
+.video-review__error[aria-hidden="true"] {
+    display: none;
+}
+
 .reviews__yandex {
     text-align: center;
     margin-top: 2rem;

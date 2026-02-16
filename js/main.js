@@ -315,9 +315,27 @@ function initVideoReview() {
 
     if (!playBtn || !overlay || !video) return;
 
-    const videoUrl = (source && source.dataset.src) || video.dataset.src || 'assets/review-video.mp4';
+    const path = (source && source.dataset.src) || video.dataset.src || '/assets/review-video.mp4';
+    const videoUrl = path.startsWith('http') ? path : (window.location.origin + path);
+    const errorEl = document.getElementById('video-error');
+
+    function showError(msg) {
+        overlay.classList.remove('hidden');
+        if (errorEl) {
+            errorEl.textContent = msg;
+            errorEl.setAttribute('aria-hidden', 'false');
+        }
+    }
+
+    function clearError() {
+        if (errorEl) {
+            errorEl.textContent = '';
+            errorEl.setAttribute('aria-hidden', 'true');
+        }
+    }
 
     function playVideo() {
+        clearError();
         overlay.classList.add('hidden');
         if (!video.src || video.src.indexOf(videoUrl) === -1) {
             video.src = videoUrl;
@@ -327,7 +345,7 @@ function initVideoReview() {
                 video.play().catch(() => {});
             }, { once: true });
             video.addEventListener('error', function onError() {
-                overlay.classList.remove('hidden');
+                showError('Видео не загружается. Убедитесь, что файл review-video.mp4 лежит в папке assets на сервере.');
             }, { once: true });
         } else {
             video.play().catch(() => {});

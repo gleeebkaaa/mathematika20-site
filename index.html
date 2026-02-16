@@ -694,7 +694,7 @@
                     </p>
                 </div>
                 
-                <!-- Video Review: на сервере положите assets/review-video.mp4 — тогда всё работает как на локалке. Видео грузится только по клику. -->
+                <!-- Video Review: файл должен лежать в /assets/review-video.mp4 на сервере. Видео грузится по клику. -->
                 <div class="reviews__video" data-aos="fade-up">
                     <div class="video-review">
                         <div class="video-review__container">
@@ -704,8 +704,9 @@
                                 controls 
                                 poster="assets/about-photo.jpg"
                                 preload="none"
-                                playsinline>
-                                <source data-src="assets/review-video.mp4" type="video/mp4">
+                                playsinline
+                                data-src="/assets/review-video.mp4">
+                                <source data-src="/assets/review-video.mp4" type="video/mp4">
                                 Ваш браузер не поддерживает видео
                             </video>
                             <div class="video-review__overlay" id="video-overlay">
@@ -713,6 +714,7 @@
                                     <i class="fas fa-play"></i>
                                 </button>
                                 <p class="video-review__label">Видео-отзыв от ученицы</p>
+                                <p class="video-review__error" id="video-error" aria-hidden="true"></p>
                             </div>
                         </div>
                     </div>
