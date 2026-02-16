@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollEffects();
     initCounters();
     initReviewsSlider();
+    initVideoReview();
     initAOS();
     initParticles();
     initTrialAnimation();
@@ -301,6 +302,53 @@ function initReviewsSlider() {
     // Initialize
     createDots();
     updateSlider();
+}
+
+/* ============================================
+   Video Review — загрузка видео только по клику
+   ============================================ */
+function initVideoReview() {
+    const playBtn = document.getElementById('play-video');
+    const overlay = document.getElementById('video-overlay');
+    const video = document.getElementById('review-video');
+    const source = video && video.querySelector('source[data-src]');
+
+    if (!playBtn || !overlay || !video) return;
+
+    const videoUrl = (source && source.dataset.src) || video.dataset.src || 'assets/review-video.mp4';
+
+    function playVideo() {
+        overlay.classList.add('hidden');
+        if (!video.src || video.src.indexOf(videoUrl) === -1) {
+            video.src = videoUrl;
+            video.load();
+            video.addEventListener('canplay', function onCanPlay() {
+                video.removeEventListener('canplay', onCanPlay);
+                video.play().catch(() => {});
+            }, { once: true });
+            video.addEventListener('error', function onError() {
+                overlay.classList.remove('hidden');
+            }, { once: true });
+        } else {
+            video.play().catch(() => {});
+        }
+    }
+
+    playBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        playVideo();
+    });
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target.closest('.video-review__play')) return;
+        playVideo();
+    });
+
+    video.addEventListener('click', () => overlay.classList.add('hidden'));
+    video.addEventListener('play', () => overlay.classList.add('hidden'));
+    video.addEventListener('pause', () => {
+        if (video.currentTime === 0) overlay.classList.remove('hidden');
+    });
 }
 
 /* ============================================

@@ -592,26 +592,26 @@ button {
 }
 
 .floating-card--1 {
-    top: 22%;
-    left: 0;
+    top: 30%;
+    left: 2%;
     animation-delay: 0s;
 }
 
 .floating-card--2 {
-    top: 22%;
-    right: 0;
+    top: 30%;
+    right: 2%;
     animation-delay: -2s;
 }
 
 .floating-card--3 {
-    bottom: 22%;
-    left: 0;
+    bottom: 30%;
+    left: 2%;
     animation-delay: -4s;
 }
 
 .floating-card--4 {
-    bottom: 22%;
-    right: 0;
+    bottom: 30%;
+    right: 2%;
     animation-delay: -6s;
 }
 
@@ -821,6 +821,7 @@ button {
     width: 800px;
     height: 700px;
     margin: 0 auto;
+    --trial-offset: 250px; /* единый отступ — узлы не перекрываются */
 }
 
 .trial__web {
@@ -829,26 +830,48 @@ button {
     left: 0;
     width: 800px;
     height: 700px;
-    z-index: 1;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.trial__web-line {
-    stroke: var(--primary-light);
-    stroke-width: 2;
-    stroke-dasharray: 8 4;
-    opacity: 0.4;
+/* Линия от «Определение уровня»: между узлами (5) и карточкой (10), иначе карточка её перекрывает */
+.trial__web--line1 {
+    z-index: 8;
 }
 
 .trial__web-flow {
     stroke-width: 3;
-    opacity: 0.7;
+    opacity: 0.75;
 }
 
-.trial__flow-dot {
-    fill: var(--primary-dark);
+.trial__flow-runner {
+    stroke-width: 5;
+    opacity: 1;
 }
 
-/* Мигание кнопки при достижении точки */
+
+/* Синхронное мигание кнопки, когда все импульсы сходятся в центре кнопки (6.1s) */
+.trial__card .btn--primary.trial__btn-sync-flash {
+    animation: trialBtnSyncFlash 6.1s ease-in-out infinite;
+}
+
+@keyframes trialBtnSyncFlash {
+    0%, 96% {
+        box-shadow: 0 0 20px rgba(123, 163, 232, 0.5), 0 4px 15px rgba(123, 163, 232, 0.3);
+        transform: scale(1);
+    }
+    98% {
+        box-shadow: 0 0 40px rgba(123, 163, 232, 1), 0 0 60px rgba(123, 163, 232, 0.8), 0 4px 30px rgba(123, 163, 232, 0.6);
+        transform: scale(1.04);
+        background: rgba(255, 255, 255, 0.95);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(123, 163, 232, 0.5), 0 4px 15px rgba(123, 163, 232, 0.3);
+        transform: scale(1);
+    }
+}
+
+/* Мигание по клику (перебивает синхронное на время) */
 .trial__card .btn--primary.btn--flash {
     animation: btnFlash 0.3s ease-out;
 }
@@ -879,44 +902,45 @@ button {
 
 .trial__card {
     background: var(--gradient-primary);
-    padding: 2rem 2.5rem;
+    padding: 1rem 1.35rem;
     border-radius: var(--radius-xl);
     color: var(--text-color);
     text-align: center;
     width: 280px;
     box-shadow: var(--shadow-xl);
+    box-sizing: border-box;
 }
 
 .trial__card-badge {
     display: inline-block;
-    padding: 0.4rem 1.25rem;
+    padding: 0.35rem 1rem;
     background: white;
     color: var(--primary-dark);
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     border-radius: var(--radius-full);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
 }
 
 .trial__card-title {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .trial__card-list {
     text-align: left;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
 .trial__card-list li {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.6rem 0;
-    font-size: 0.875rem;
+    padding: 0.35rem 0;
+    font-size: 0.85rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -943,19 +967,20 @@ button {
     box-shadow: 0 0 30px rgba(123, 163, 232, 0.7), 0 6px 20px rgba(123, 163, 232, 0.4);
 }
 
-/* Узлы вокруг */
+/* Узлы: одна ширина, одна высота, одинаковые отступы и симметрия контента */
 .trial__node {
     position: absolute;
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    align-items: stretch;
+    gap: 0.75rem;
     background: white;
-    padding: 1rem 1.25rem;
+    padding: 0.875rem 1rem;
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
     z-index: 5;
-    max-width: 200px;
-    min-height: 88px;
+    width: 200px;
+    height: 100px;
+    box-sizing: border-box;
     transition: var(--transition);
 }
 
@@ -966,36 +991,50 @@ button {
 
 .trial__node-icon {
     flex-shrink: 0;
-    width: 3rem;
-    height: 3rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--gradient-primary);
     color: var(--text-color);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     border-radius: var(--radius-full);
+    align-self: center;
+}
+
+.trial__node-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 }
 
 .trial__node-content h4 {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-color);
-    margin-bottom: 0.25rem;
+    margin: 0 0 0.2rem 0;
+    line-height: 1.25;
 }
 
 .trial__node-content p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-light);
-    line-height: 1.4;
+    line-height: 1.35;
+    margin: 0 0 0.2rem 0;
 }
 
-/* Позиции узлов - фиксированы в пикселях для совпадения с SVG (viewBox 800x700) */
-.trial__node--1 { top: -55px; left: 300px; }
-.trial__node--2 { top: 150px; right: 0; left: auto; }
-.trial__node--3 { top: 500px; right: 50px; left: auto; }
-.trial__node--4 { top: 500px; left: 0; }
-.trial__node--5 { top: 150px; left: 0; }
+/* Позиции: пятиугольник с отступом от центральной карточки (карточка 280px по центру) */
+.trial__node--1 { top: 50px;  left: 300px; }   /* верх */
+.trial__node--2 { top: 223px; left: 564px; }   /* право-верх */
+.trial__node--3 { top: 502px; left: 564px; }   /* право-низ (на одном уровне с рекомендации) */
+.trial__node--4 { top: 502px; left: 36px; }   /* лево-низ */
+.trial__node--5 { top: 223px; left: 36px; }    /* лево-верх */
 
 /* Мобильная версия */
 .trial__mobile {

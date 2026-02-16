@@ -22,7 +22,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=23">
+    <link rel="stylesheet" href="css/style.css?v=28">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
@@ -308,9 +308,34 @@
                                 <stop offset="0%" stop-color="var(--primary-light)" stop-opacity="0.3"/>
                                 <stop offset="100%" stop-color="var(--primary-dark)" stop-opacity="0.9"/>
                             </linearGradient>
-                            <!-- Фильтр свечения -->
-                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <!-- Комета: яркая головка впереди, короткий хвост — все stop с достаточной видимостью -->
+                            <linearGradient id="runnerGrad1" gradientUnits="userSpaceOnUse" x1="400" y1="150" x2="400" y2="250">
+                                <stop offset="0%" stop-color="#a0c0fd" stop-opacity="0.35"/>
+                                <stop offset="40%" stop-color="#c0d8ff" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+                            </linearGradient>
+                            <linearGradient id="runnerGrad2" gradientUnits="userSpaceOnUse" x1="664" y1="273" x2="400" y2="420">
+                                <stop offset="0%" stop-color="#a0c0fd" stop-opacity="0.35"/>
+                                <stop offset="40%" stop-color="#c0d8ff" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+                            </linearGradient>
+                            <linearGradient id="runnerGrad3" gradientUnits="userSpaceOnUse" x1="664" y1="552" x2="400" y2="420">
+                                <stop offset="0%" stop-color="#a0c0fd" stop-opacity="0.35"/>
+                                <stop offset="40%" stop-color="#c0d8ff" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+                            </linearGradient>
+                            <linearGradient id="runnerGrad4" gradientUnits="userSpaceOnUse" x1="136" y1="552" x2="400" y2="420">
+                                <stop offset="0%" stop-color="#a0c0fd" stop-opacity="0.35"/>
+                                <stop offset="40%" stop-color="#c0d8ff" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+                            </linearGradient>
+                            <linearGradient id="runnerGrad5" gradientUnits="userSpaceOnUse" x1="136" y1="273" x2="400" y2="420">
+                                <stop offset="0%" stop-color="#a0c0fd" stop-opacity="0.35"/>
+                                <stop offset="40%" stop-color="#c0d8ff" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+                            </linearGradient>
+                            <filter id="runnerGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="1" result="blur"/>
                                 <feMerge>
                                     <feMergeNode in="blur"/>
                                     <feMergeNode in="SourceGraphic"/>
@@ -318,32 +343,47 @@
                             </filter>
                         </defs>
                         
-                        <!-- Внешнее кольцо -->
-                        <path class="trial__web-line" d="M400,80 L720,200 L650,550 L150,550 L80,200 Z" fill="none"/>
+                        <!-- Сплошные провода. Линия 1 — во втором SVG (trial__web--line1) -->
+                        <path class="trial__web-flow" d="M664,273 L400,420" stroke="url(#flowGrad2)" fill="none"/>
+                        <path class="trial__web-flow" d="M664,552 L400,420" stroke="url(#flowGrad3)" fill="none"/>
+                        <path class="trial__web-flow" d="M136,552 L400,420" stroke="url(#flowGrad4)" fill="none"/>
+                        <path class="trial__web-flow" d="M136,273 L400,420" stroke="url(#flowGrad5)" fill="none"/>
                         
-                        <!-- Линии от элементов к кнопке с градиентом -->
-                        <line class="trial__web-flow" x1="400" y1="80" x2="400" y2="410" stroke="url(#flowGrad1)"/>
-                        <line class="trial__web-flow" x1="720" y1="200" x2="400" y2="410" stroke="url(#flowGrad2)"/>
-                        <line class="trial__web-flow" x1="650" y1="550" x2="400" y2="410" stroke="url(#flowGrad3)"/>
-                        <line class="trial__web-flow" x1="150" y1="550" x2="400" y2="410" stroke="url(#flowGrad4)"/>
-                        <line class="trial__web-flow" x1="80" y1="200" x2="400" y2="410" stroke="url(#flowGrad5)"/>
-                        
-                        <!-- Анимированные точки, бегущие к кнопке по очереди -->
-                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
-                            <animateMotion dur="5s" repeatCount="indefinite" path="M400,80 L400,410" begin="0s"/>
-                        </circle>
-                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
-                            <animateMotion dur="5s" repeatCount="indefinite" path="M720,200 L400,410" begin="1s"/>
-                        </circle>
-                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
-                            <animateMotion dur="5s" repeatCount="indefinite" path="M650,550 L400,410" begin="2s"/>
-                        </circle>
-                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
-                            <animateMotion dur="5s" repeatCount="indefinite" path="M150,550 L400,410" begin="3s"/>
-                        </circle>
-                        <circle class="trial__flow-dot" r="5" filter="url(#glow)">
-                            <animateMotion dur="5s" repeatCount="indefinite" path="M80,200 L400,410" begin="4s"/>
-                        </circle>
+                        <!-- Импульсы. Runner 1 — во втором SVG -->
+                        <path class="trial__flow-runner" d="M664,273 L400,420" stroke="url(#runnerGrad2)" stroke-width="5" stroke-dasharray="25 302" stroke-linecap="round" filter="url(#runnerGlow)">
+                            <animate attributeName="stroke-dashoffset" from="302" to="0" dur="6.1s" repeatCount="indefinite" begin="0s"/>
+                        </path>
+                        <path class="trial__flow-runner" d="M664,552 L400,420" stroke="url(#runnerGrad3)" stroke-width="5" stroke-dasharray="25 295" stroke-linecap="round" filter="url(#runnerGlow)">
+                            <animate attributeName="stroke-dashoffset" from="295" to="0" dur="6.1s" repeatCount="indefinite" begin="0s"/>
+                        </path>
+                        <path class="trial__flow-runner" d="M136,552 L400,420" stroke="url(#runnerGrad4)" stroke-width="5" stroke-dasharray="25 295" stroke-linecap="round" filter="url(#runnerGlow)">
+                            <animate attributeName="stroke-dashoffset" from="295" to="0" dur="6.1s" repeatCount="indefinite" begin="0s"/>
+                        </path>
+                        <path class="trial__flow-runner" d="M136,273 L400,420" stroke="url(#runnerGrad5)" stroke-width="5" stroke-dasharray="25 302" stroke-linecap="round" filter="url(#runnerGlow)">
+                            <animate attributeName="stroke-dashoffset" from="302" to="0" dur="6.1s" repeatCount="indefinite" begin="0s"/>
+                        </path>
+                    </svg>
+                    <!-- Линия от «Определение уровня»: свой слой со своими defs, чтобы во всех браузерах была видна -->
+                    <svg class="trial__web trial__web--line1" viewBox="0 0 800 700" preserveAspectRatio="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="flowGrad1Line1" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#c0d8ff" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#7ba3e8" stop-opacity="0.9"/>
+                            </linearGradient>
+                            <linearGradient id="runnerGrad1Line1" gradientUnits="userSpaceOnUse" x1="400" y1="150" x2="400" y2="250">
+                                <stop offset="0%" stop-color="#a0c0fd" stop-opacity="0.35"/>
+                                <stop offset="40%" stop-color="#c0d8ff" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+                            </linearGradient>
+                            <filter id="runnerGlowLine1" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="1" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <path class="trial__web-flow" d="M400,150 L400,250" stroke="url(#flowGrad1Line1)" fill="none" stroke-width="3"/>
+                        <path class="trial__flow-runner" d="M400,150 L400,250" stroke="url(#runnerGrad1Line1)" stroke-dasharray="25 100" stroke-linecap="round" filter="url(#runnerGlowLine1)" stroke-width="5">
+                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="6.1s" repeatCount="indefinite" begin="0s"/>
+                        </path>
                     </svg>
                     
                     <!-- Центральная карточка -->
@@ -367,7 +407,7 @@
                                 </li>
                             </ul>
                             
-                            <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary btn--lg btn--block">
+                            <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary btn--lg btn--block trial__btn-sync-flash">
                                 <i class="fab fa-telegram"></i>
                                 Записаться
                             </a>
@@ -669,21 +709,22 @@
                     </p>
                 </div>
                 
-                <!-- Video Review -->
+                <!-- Video Review: на сервере положите assets/review-video.mp4 — тогда всё работает как на локалке. Видео грузится только по клику. -->
                 <div class="reviews__video" data-aos="fade-up">
                     <div class="video-review">
                         <div class="video-review__container">
-                            <!-- Здесь будет видео-отзыв -->
                             <video 
                                 class="video-review__player" 
+                                id="review-video"
                                 controls 
-                                poster="assets/video-poster.jpg"
-                                preload="metadata">
-                                <source src="assets/review-video.mp4" type="video/mp4">
+                                poster="assets/about-photo.jpg"
+                                preload="none"
+                                playsinline>
+                                <source data-src="assets/review-video.mp4" type="video/mp4">
                                 Ваш браузер не поддерживает видео
                             </video>
                             <div class="video-review__overlay" id="video-overlay">
-                                <button class="video-review__play" id="play-video">
+                                <button class="video-review__play" id="play-video" type="button" aria-label="Смотреть видео">
                                     <i class="fas fa-play"></i>
                                 </button>
                                 <p class="video-review__label">Видео-отзыв от ученицы</p>
