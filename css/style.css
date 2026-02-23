@@ -438,6 +438,10 @@ button {
     align-items: center;
 }
 
+.hero__content {
+    margin-top: 2.5rem;
+}
+
 .hero__badge, .hero__badge-center {
     display: inline-flex;
     align-items: center;
@@ -1863,6 +1867,16 @@ button {
     box-shadow: var(--shadow-md);
 }
 
+a.contact-item {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.contact-item:hover .contact-item__title,
+a.contact-item:hover .contact-item__text {
+    color: var(--primary-color);
+}
+
 .contact-item__icon {
     width: 3rem;
     height: 3rem;
@@ -2167,6 +2181,92 @@ button {
 
 .document-card__details strong {
     color: var(--text-color);
+}
+
+/* Programs strip — horizontal scroll */
+.programs-strip {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.programs-strip__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.35rem;
+}
+
+.programs-strip__description {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.programs-strip__scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.programs-strip__scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.programs-strip__scroll::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: 3px;
+}
+
+.programs-strip__scroll::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 3px;
+}
+
+.programs-strip__card {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 260px;
+    padding: 1rem 1.25rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow);
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.programs-strip__card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: var(--shadow-lg);
+    color: var(--primary-color);
+}
+
+.programs-strip__card i:first-child {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.programs-strip__card span {
+    flex: 1;
+    text-align: left;
+}
+
+.programs-strip__card .fa-chevron-right {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.programs-strip__card:hover .fa-chevron-right {
+    color: var(--primary-color);
 }
 
 /* ============================================
