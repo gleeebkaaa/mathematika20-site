@@ -315,8 +315,8 @@ function initVideoReview() {
 
     if (!playBtn || !overlay || !video) return;
 
-    const path = (source && source.dataset.src) || video.dataset.src || '/assets/review-video.mp4';
-    const videoUrl = path.startsWith('http') ? path : (window.location.origin + path);
+    const path = (source && source.dataset.src) || video.dataset.src || 'assets/review-video.mp4';
+    const videoUrl = path.startsWith('http') ? path : (new URL(path, window.location.href)).href;
     const errorEl = document.getElementById('video-error');
 
     function showError(msg) {

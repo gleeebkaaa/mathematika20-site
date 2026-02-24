@@ -76,6 +76,10 @@
 /* ============================================
    Reset & Base Styles
    ============================================ */
+html {
+    overflow-x: hidden;
+}
+
 *,
 *::before,
 *::after {
@@ -130,6 +134,8 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--container-padding);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section {
@@ -2102,6 +2108,14 @@ a.contact-item:hover .contact-item__text {
     grid-template-columns: repeat(5, 1fr);
 }
 
+.documents__grid--legal {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.documents__grid--legal .document-card {
+    min-height: 220px;
+}
+
 .document-card {
     display: flex;
     flex-direction: column;
@@ -2111,6 +2125,7 @@ a.contact-item:hover .contact-item__text {
     box-shadow: var(--shadow);
     transition: var(--transition);
     border: 1px solid transparent;
+    min-width: 0;
 }
 
 .document-card:hover {
@@ -2144,6 +2159,8 @@ a.contact-item:hover .contact-item__text {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     flex-grow: 1;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .document-card__link {
@@ -2183,59 +2200,40 @@ a.contact-item:hover .contact-item__text {
     color: var(--text-color);
 }
 
-/* Programs strip — horizontal scroll */
-.programs-strip {
+/* Programs block — 2 rows grid */
+.programs-block {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.programs-strip__title {
+.programs-block__title {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--text-color);
     margin-bottom: 0.35rem;
 }
 
-.programs-strip__description {
+.programs-block__description {
     font-size: 0.875rem;
     color: var(--text-light);
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
-.programs-strip__scroll {
+.programs-block__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.programs-block__card {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 0.5rem;
-    -webkit-overflow-scrolling: touch;
-}
-
-.programs-strip__scroll::-webkit-scrollbar {
-    height: 6px;
-}
-
-.programs-strip__scroll::-webkit-scrollbar-track {
-    background: var(--bg-light);
-    border-radius: 3px;
-}
-
-.programs-strip__scroll::-webkit-scrollbar-thumb {
-    background: rgba(99, 102, 241, 0.3);
-    border-radius: 3px;
-}
-
-.programs-strip__card {
-    display: inline-flex;
-    flex-shrink: 0;
     align-items: center;
-    gap: 0.75rem;
-    min-width: 260px;
-    padding: 1rem 1.25rem;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1.25rem 1.5rem;
     background: white;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: var(--shadow);
     color: var(--text-color);
@@ -2244,28 +2242,33 @@ a.contact-item:hover .contact-item__text {
     transition: var(--transition);
 }
 
-.programs-strip__card:hover {
+.programs-block__card:hover {
     border-color: rgba(99, 102, 241, 0.3);
     box-shadow: var(--shadow-lg);
     color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
-.programs-strip__card i:first-child {
+.programs-block__card i:first-child {
     color: var(--primary-color);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    flex-shrink: 0;
 }
 
-.programs-strip__card span {
+.programs-block__card span {
     flex: 1;
+    min-width: 0;
     text-align: left;
+    overflow-wrap: break-word;
 }
 
-.programs-strip__card .fa-chevron-right {
+.programs-block__card .fa-chevron-right {
     font-size: 0.75rem;
     color: var(--text-light);
+    flex-shrink: 0;
 }
 
-.programs-strip__card:hover .fa-chevron-right {
+.programs-block__card:hover .fa-chevron-right {
     color: var(--primary-color);
 }
 
@@ -2361,6 +2364,31 @@ a.contact-item:hover .contact-item__text {
     color: var(--primary-light);
 }
 
+.footer__list--contacts .icon-max--list {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* MAX logo icon — в стиле сайта */
+.icon-max {
+    display: block;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.contact-item__icon--max .icon-max {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.cta__social-links .icon-max,
+.footer__socials .icon-max {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
 .footer__bottom {
     padding: 1.5rem 0;
     display: flex;
@@ -2443,6 +2471,14 @@ a.contact-item:hover .contact-item__text {
 @media screen and (max-width: 900px) {
     .documents__grid--5 {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .documents__grid--legal {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .programs-block__grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -2634,6 +2670,10 @@ a.contact-item:hover .contact-item__text {
     }
     
     .documents__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .documents__grid--legal {
         grid-template-columns: 1fr;
     }
     
