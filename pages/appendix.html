@@ -15,8 +15,9 @@
     <style>
         .document__content--fullwidth { max-width: none; }
         .appendix-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; }
-        .appendix-table { width: 100%; min-width: 700px; border-collapse: collapse; font-size: 0.875rem; table-layout: fixed; }
+        .appendix-table { width: 100%; min-width: 960px; border-collapse: collapse; font-size: 0.875rem; table-layout: fixed; }
         .appendix-table th, .appendix-table td { border: 1px solid rgba(0,0,0,0.1); padding: 0.6rem 0.5rem; text-align: left; overflow-wrap: break-word; }
+        .appendix-table th:nth-child(6), .appendix-table td:nth-child(6) { white-space: nowrap; min-width: 7em; }
         .appendix-table th { background: var(--bg-light); font-weight: 600; }
         .appendix-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
         @media (max-width: 768px) {
