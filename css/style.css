@@ -453,8 +453,10 @@ button {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: rgba(99, 102, 241, 0.1);
-    color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(160, 192, 253, 0.22) 0%, rgba(212, 240, 237, 0.52) 100%);
+    border: 1px solid rgba(123, 163, 232, 0.35);
+    box-shadow: 0 8px 24px rgba(123, 163, 232, 0.18);
+    color: #4f6fa8;
     font-size: 0.875rem;
     font-weight: 600;
     border-radius: var(--radius-full);
@@ -467,13 +469,17 @@ button {
     animation: badgePulse 3s ease-in-out infinite;
 }
 
+.hero__badge-text {
+    display: inline-block;
+}
+
 @keyframes badgePulse {
     0%, 100% {
-        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+        box-shadow: 0 8px 24px rgba(123, 163, 232, 0.2);
         transform: scale(1);
     }
     50% {
-        box-shadow: 0 4px 20px rgba(251, 191, 36, 0.6), 0 0 30px rgba(251, 191, 36, 0.4);
+        box-shadow: 0 12px 30px rgba(123, 163, 232, 0.28), 0 0 36px rgba(212, 240, 237, 0.55);
         transform: scale(1.05);
     }
 }
@@ -623,6 +629,10 @@ button {
     bottom: 30%;
     right: 2%;
     animation-delay: -6s;
+}
+
+.about__title-brand {
+    display: inline;
 }
 
 @keyframes floatCard {
@@ -2531,7 +2541,26 @@ a.contact-item:hover .contact-item__text {
         transform: translateX(-50%);
         z-index: 10;
         white-space: nowrap;
+        box-shadow: 0 10px 28px rgba(123, 163, 232, 0.24), 0 0 32px rgba(212, 240, 237, 0.5);
         animation: none;
+    }
+
+    .floating-card--1,
+    .floating-card--2 {
+        top: 22%;
+    }
+
+    .floating-card--3,
+    .floating-card--4 {
+        bottom: 18%;
+    }
+
+    .floating-card--3 {
+        left: -2%;
+    }
+
+    .floating-card--4 {
+        right: -6%;
     }
     
     .hero__visual {
@@ -2625,6 +2654,11 @@ a.contact-item:hover .contact-item__text {
 }
 
 @media screen and (max-width: 768px) {
+    .about__title-brand {
+        display: block;
+        margin-top: 0.25rem;
+    }
+
     .nav__menu {
         position: fixed;
         top: 0;
@@ -2721,6 +2755,55 @@ a.contact-item:hover .contact-item__text {
         --container-padding: 1rem;
     }
     
+    .hero__badge--lg {
+        max-width: calc(100vw - 2rem);
+        padding: 0.75rem 1rem;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero__badge-text {
+        text-wrap: balance;
+    }
+
+    .hero__visual {
+        max-width: 320px;
+    }
+
+    .floating-card {
+        gap: 0.5rem;
+        padding: 0.65rem 0.8rem;
+    }
+
+    .floating-card span {
+        font-size: 0.72rem;
+    }
+
+    .floating-card i {
+        font-size: 1rem;
+    }
+
+    .floating-card--1 {
+        top: 18%;
+        left: 0;
+    }
+
+    .floating-card--2 {
+        top: 18%;
+        right: 0;
+    }
+
+    .floating-card--3 {
+        bottom: 10%;
+        left: -1%;
+    }
+
+    .floating-card--4 {
+        bottom: 10%;
+        right: -10%;
+    }
+
     .hero__actions {
         flex-direction: column;
     }
@@ -2728,7 +2811,6 @@ a.contact-item:hover .contact-item__text {
     .hero__actions .btn {
         width: 100%;
     }
-    
     
     .cta__content {
         padding: 2.5rem 1.5rem;
