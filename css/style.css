@@ -453,10 +453,10 @@ button {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, rgba(160, 192, 253, 0.22) 0%, rgba(212, 240, 237, 0.52) 100%);
-    border: 1px solid rgba(123, 163, 232, 0.35);
-    box-shadow: 0 8px 24px rgba(123, 163, 232, 0.18);
-    color: #4f6fa8;
+    background: linear-gradient(135deg, rgba(255, 248, 214, 0.92) 0%, rgba(255, 255, 255, 0.96) 100%);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    box-shadow: 0 10px 28px rgba(251, 191, 36, 0.22), 0 0 24px rgba(251, 191, 36, 0.12);
+    color: #7a6422;
     font-size: 0.875rem;
     font-weight: 600;
     border-radius: var(--radius-full);
@@ -469,16 +469,23 @@ button {
     animation: badgePulse 3s ease-in-out infinite;
 }
 
+.hero__badge--mobile {
+    display: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    animation: badgePulse 3s ease-in-out infinite;
+}
+
 .hero__badge-text {
     display: inline-block;
 }
 
 @keyframes badgePulse {
     0%, 100% {
-        box-shadow: 0 8px 24px rgba(123, 163, 232, 0.2);
+        box-shadow: 0 10px 28px rgba(251, 191, 36, 0.22), 0 0 24px rgba(251, 191, 36, 0.12);
     }
     50% {
-        box-shadow: 0 12px 30px rgba(123, 163, 232, 0.28), 0 0 36px rgba(212, 240, 237, 0.55);
+        box-shadow: 0 12px 34px rgba(251, 191, 36, 0.34), 0 0 40px rgba(251, 191, 36, 0.24);
     }
 }
 
@@ -2533,15 +2540,20 @@ a.contact-item:hover .contact-item__text {
         margin-top: 0;
     }
     
-    .hero__badge--lg {
-        position: static;
-        top: auto;
-        left: auto;
-        transform: none;
-        z-index: auto;
-        margin: 0 auto 1.25rem;
+    .hero__content .hero__badge--lg {
+        display: none;
+    }
+
+    .hero__badge--mobile {
+        display: inline-flex;
+        position: absolute;
+        top: 5.85rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        margin: 0;
         white-space: nowrap;
-        box-shadow: 0 10px 28px rgba(123, 163, 232, 0.24), 0 0 32px rgba(212, 240, 237, 0.5);
+        box-shadow: 0 12px 34px rgba(251, 191, 36, 0.32), 0 0 40px rgba(251, 191, 36, 0.2);
     }
 
     .floating-card--1,
@@ -2564,7 +2576,7 @@ a.contact-item:hover .contact-item__text {
     
     .hero__visual {
         order: 1;
-        margin: 3rem auto 0;
+        margin: 5.5rem auto 0;
         width: 100%;
         max-width: 350px;
     }
@@ -2755,14 +2767,20 @@ a.contact-item:hover .contact-item__text {
     }
     
     .hero__badge--lg {
+        display: none;
+    }
+
+    .hero__badge--mobile {
         max-width: calc(100vw - 2rem);
+        display: inline-flex;
         padding: 0.75rem 1rem;
         white-space: normal;
         text-align: center;
         justify-content: center;
+        top: 5.6rem;
     }
 
-    .hero__badge-text {
+    .hero__badge--mobile .hero__badge-text {
         text-wrap: balance;
     }
 
