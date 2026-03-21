@@ -2771,17 +2771,18 @@ a.contact-item:hover .contact-item__text {
     }
 
     .hero__badge--mobile {
-        max-width: calc(100vw - 2rem);
+        max-width: none;
         display: inline-flex;
-        padding: 0.75rem 1rem;
-        white-space: normal;
+        padding: 0.7rem 0.95rem;
+        font-size: 1rem;
+        white-space: nowrap;
         text-align: center;
         justify-content: center;
         top: 5.6rem;
     }
 
     .hero__badge--mobile .hero__badge-text {
-        text-wrap: balance;
+        white-space: nowrap;
     }
 
     .hero__visual {
