@@ -476,11 +476,9 @@ button {
 @keyframes badgePulse {
     0%, 100% {
         box-shadow: 0 8px 24px rgba(123, 163, 232, 0.2);
-        transform: scale(1);
     }
     50% {
         box-shadow: 0 12px 30px rgba(123, 163, 232, 0.28), 0 0 36px rgba(212, 240, 237, 0.55);
-        transform: scale(1.05);
     }
 }
 
@@ -2532,17 +2530,18 @@ a.contact-item:hover .contact-item__text {
     
     .hero__content {
         order: 2;
+        margin-top: 0;
     }
     
     .hero__badge--lg {
-        position: absolute;
-        top: 5.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
+        position: static;
+        top: auto;
+        left: auto;
+        transform: none;
+        z-index: auto;
+        margin: 0 auto 1.25rem;
         white-space: nowrap;
         box-shadow: 0 10px 28px rgba(123, 163, 232, 0.24), 0 0 32px rgba(212, 240, 237, 0.5);
-        animation: none;
     }
 
     .floating-card--1,
@@ -2796,12 +2795,12 @@ a.contact-item:hover .contact-item__text {
 
     .floating-card--3 {
         bottom: 10%;
-        left: -1%;
+        left: -4%;
     }
 
     .floating-card--4 {
         bottom: 10%;
-        right: -10%;
+        right: -12%;
     }
 
     .hero__actions {
