@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounters();
     initReviewsSlider();
     initVideoReview();
-    initAOS();
     initParticles();
     initTrialAnimation();
 });
@@ -20,12 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
    ============================================ */
 function initPreloader() {
     const preloader = document.getElementById('preloader');
-    
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-            document.body.style.overflow = 'visible';
-        }, 500);
+    if (!preloader) return;
+
+    requestAnimationFrame(() => {
+        preloader.classList.add('hidden');
+        preloader.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'visible';
+        setTimeout(() => preloader.remove(), 350);
     });
 }
 
@@ -370,35 +370,29 @@ function initVideoReview() {
 }
 
 /* ============================================
-   AOS (Animate On Scroll) Initialization
-   ============================================ */
-function initAOS() {
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 50,
-            disable: 'mobile'
-        });
-    }
-}
-
-/* ============================================
    Particle Animation (Hero Background)
    ============================================ */
 function initParticles() {
     const container = document.getElementById('particles');
-    if (!container) return;
+    if (!container || isMobileViewport() || prefersReducedMotion()) return;
     
-    const particleCount = 30;
-    
-    for (let i = 0; i < particleCount; i++) {
-        createParticle(container);
+    const particleCount = 12;
+    const renderParticles = () => {
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < particleCount; i++) {
+            fragment.appendChild(createParticle());
+        }
+        container.appendChild(fragment);
+    };
+
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(renderParticles, { timeout: 1200 });
+    } else {
+        setTimeout(renderParticles, 400);
     }
 }
 
-function createParticle(container) {
+function createParticle() {
     const particle = document.createElement('div');
     particle.className = 'particle';
     
@@ -422,7 +416,7 @@ function createParticle(container) {
         pointer-events: none;
     `;
     
-    container.appendChild(particle);
+    return particle;
 }
 
 // Add particle animation keyframes
@@ -470,6 +464,14 @@ function debounce(func, wait = 100) {
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
     };
+}
+
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function isMobileViewport() {
+    return window.innerWidth < 992;
 }
 
 // Throttle function
@@ -546,7 +548,7 @@ function showCookieConsent() {
    ============================================ */
 function initTrialAnimation() {
     const trialBtn = document.querySelector('.trial__center-card .btn--primary');
-    if (!trialBtn) return;
+    if (!trialBtn || isMobileViewport() || prefersReducedMotion()) return;
     
     // Функция мигания кнопки
     function flashButton() {

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: mathematika20.ru
+Sitemap: https://mathematika20.ru/sitemap.xml

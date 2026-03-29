@@ -3,6 +3,22 @@
    Modern, Clean, Professional Design
    ============================================ */
 
+@font-face {
+    font-family: 'InterLocal';
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: optional;
+}
+
+@font-face {
+    font-family: 'InterLocal';
+    src: url('../fonts/Inter-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: optional;
+}
+
 /* ============================================
    CSS Variables
    ============================================ */
@@ -45,8 +61,8 @@
     --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
     
     /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-display: 'Playfair Display', Georgia, serif;
+    --font-primary: 'InterLocal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: Georgia, 'Times New Roman', serif;
     
     /* Spacing */
     --section-padding: 6rem;
@@ -344,7 +360,7 @@ button {
 
 .btn--white {
     background: white;
-    color: var(--primary-dark);
+    color: var(--text-color);
     box-shadow: var(--shadow-md);
 }
 
@@ -552,7 +568,7 @@ button {
 
 .stat__label {
     font-size: 0.875rem;
-    color: var(--text-light);
+    color: #4f6077;
     margin-top: 0.25rem;
 }
 
@@ -710,7 +726,7 @@ button {
     display: inline-block;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: #4f6f9c;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 0.75rem;
@@ -1362,7 +1378,7 @@ button {
 .program-card--featured .btn--primary,
 .program-card--featured .program-card__btn {
     background: white;
-    color: var(--primary-dark);
+    color: var(--text-color);
     box-shadow: none;
     border: 2px solid transparent;
     min-height: 2.75rem;
@@ -2210,7 +2226,7 @@ a.contact-item:hover .contact-item__text {
     gap: 0.5rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: #355da0;
     transition: var(--transition-fast);
 }
 
@@ -2339,6 +2355,30 @@ a.contact-item:hover .contact-item__text {
     height: 80px;
     width: auto;
     filter: brightness(0) invert(1);
+}
+
+@media (max-width: 991px), (prefers-reduced-motion: reduce) {
+    .hero__image-wrapper::before,
+    .hero__badge--lg,
+    .hero__badge--mobile,
+    .trial__card .btn--primary.trial__btn-sync-flash,
+    .trial__card .btn--primary.btn--flash {
+        animation: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
 .footer__description {
