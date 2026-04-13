@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#2d3a53">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.min.css?v=35">
+    <link rel="stylesheet" href="css/style.min.css?v=36">
     <link rel="preload" href="css/icons.min.css?v=36" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/icons.min.css?v=36"></noscript>
     
@@ -161,6 +161,16 @@
                         <a href="#contacts" class="nav__link">Контакты</a>
                     </li>
                 </ul>
+
+                <a href="tel:+79652030746" class="btn btn--call nav__call-menu call-cta" id="menu-call-button" data-call-source="mobile-menu" aria-label="Позвонить по номеру +7 965 203-07-46">
+                    <span class="btn__icon-shell" aria-hidden="true">
+                        <i class="fas fa-phone-alt"></i>
+                    </span>
+                    <span class="btn__label-group">
+                        <span class="btn__label">Позвонить</span>
+                        <span class="btn__subtext">+7 (965) 203-07-46</span>
+                    </span>
+                </a>
                 
                 <div class="nav__close" id="nav-close">
                     <i class="fas fa-times"></i>
@@ -168,6 +178,16 @@
             </div>
             
             <div class="nav__actions">
+                <a href="tel:+79652030746" class="btn btn--call nav__call call-cta" id="header-call-button" data-call-source="header" aria-label="Позвонить по номеру +7 965 203-07-46">
+                    <span class="btn__icon-shell" aria-hidden="true">
+                        <i class="fas fa-phone-alt"></i>
+                    </span>
+                    <span class="btn__label-group">
+                        <span class="btn__label">Позвонить</span>
+                        <span class="btn__subtext">+7 (965) 203-07-46</span>
+                    </span>
+                </a>
+
                 <a href="https://t.me/mathematika20" target="_blank" class="btn btn--primary nav__cta">
                     <i class="fab fa-telegram"></i>
                     Записаться
@@ -223,9 +243,14 @@
                             <i class="fab fa-telegram"></i>
                             Записаться на пробное занятие
                         </a>
-                        <a href="#about" class="btn btn--outline btn--lg">
-                            <i class="fas fa-play-circle"></i>
-                            Узнать больше
+                        <a href="tel:+79652030746" class="btn btn--call btn--lg hero__call call-cta" id="hero-call-button" data-call-source="hero" aria-label="Позвонить по номеру +7 965 203-07-46">
+                            <span class="btn__icon-shell" aria-hidden="true">
+                                <i class="fas fa-phone-alt"></i>
+                            </span>
+                            <span class="btn__label-group">
+                                <span class="btn__label">Позвонить сейчас</span>
+                                <span class="btn__subtext">+7 (965) 203-07-46</span>
+                            </span>
                         </a>
                     </div>
                     
@@ -1344,6 +1369,6 @@
     </button>
 
     <!-- Scripts -->
-    <script src="js/main.min.js?v=5"></script>
+    <script src="js/main.min.js?v=6"></script>
 </body>
 </html>

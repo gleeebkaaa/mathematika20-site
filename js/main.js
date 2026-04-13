@@ -38,6 +38,7 @@ function initNavigation() {
     const navToggle = document.getElementById('nav-toggle');
     const navClose = document.getElementById('nav-close');
     const navLinks = document.querySelectorAll('.nav__link');
+    const navActionLinks = document.querySelectorAll('.nav__call-menu, .nav__cta');
     
     // Mobile menu toggle
     if (navToggle) {
@@ -56,6 +57,13 @@ function initNavigation() {
     
     // Close menu when clicking on nav links
     navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('show-menu');
+            document.body.style.overflow = 'visible';
+        });
+    });
+
+    navActionLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('show-menu');
             document.body.style.overflow = 'visible';

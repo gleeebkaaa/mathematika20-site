@@ -269,7 +269,7 @@ button {
 .nav__list {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: clamp(1rem, 1.6vw, 2rem);
 }
 
 .nav__link {
@@ -278,6 +278,7 @@ button {
     color: var(--text-light);
     transition: var(--transition-fast);
     position: relative;
+    white-space: nowrap;
 }
 
 .nav__link::after {
@@ -313,6 +314,36 @@ button {
     cursor: pointer;
 }
 
+@keyframes callPulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 214, 94, 0.16);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(255, 214, 94, 0);
+    }
+}
+
+@keyframes phoneWiggle {
+    0%,
+    78%,
+    100% {
+        transform: rotate(0deg);
+    }
+    82% {
+        transform: rotate(15deg);
+    }
+    86% {
+        transform: rotate(-11deg);
+    }
+    90% {
+        transform: rotate(9deg);
+    }
+    94% {
+        transform: rotate(-5deg);
+    }
+}
+
 /* ============================================
    Buttons
    ============================================ */
@@ -329,6 +360,43 @@ button {
     cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.btn__icon-shell,
+.btn__label-group {
+    position: relative;
+    z-index: 1;
+}
+
+.btn__icon-shell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.15rem;
+    height: 2.15rem;
+    border-radius: 50%;
+    background: rgba(255, 214, 94, 0.18);
+    color: #ffd65e;
+    flex-shrink: 0;
+}
+
+.btn__label-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.05;
+}
+
+.btn__label {
+    font-size: 0.95rem;
+}
+
+.btn__subtext {
+    margin-top: 0.15rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.78);
 }
 
 .btn--primary {
@@ -356,6 +424,70 @@ button {
 .btn--outline:hover {
     border-color: var(--primary-color);
     background: rgba(99, 102, 241, 0.05);
+}
+
+.btn--call {
+    position: relative;
+    color: #ffffff;
+    background: linear-gradient(135deg, #17263a 0%, #243b58 100%);
+    border: 1px solid rgba(255, 214, 94, 0.26);
+    box-shadow: 0 12px 26px rgba(23, 38, 58, 0.2);
+    isolation: isolate;
+}
+
+.btn--call::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(120deg, rgba(255, 214, 94, 0.26), rgba(255, 255, 255, 0) 48%, rgba(255, 214, 94, 0.22));
+    opacity: 0.85;
+    z-index: 0;
+}
+
+.btn--call::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 rgba(255, 214, 94, 0.32);
+    animation: callPulse 2.8s ease-out infinite;
+    z-index: -1;
+}
+
+.btn--call:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 16px 34px rgba(23, 38, 58, 0.28);
+}
+
+.btn--call:hover .btn__icon-shell {
+    background: rgba(255, 214, 94, 0.26);
+}
+
+.btn--call .btn__icon-shell i {
+    animation: phoneWiggle 3.2s ease-in-out infinite;
+    transform-origin: 60% 65%;
+}
+
+.nav__call {
+    min-width: auto;
+    padding-right: 1.15rem;
+}
+
+.nav__call .btn__subtext {
+    display: none;
+}
+
+.nav__call-menu {
+    display: none;
+    width: 100%;
+    margin-top: 2rem;
+    justify-content: flex-start;
+}
+
+.hero__call {
+    min-width: 16.5rem;
+    justify-content: flex-start;
 }
 
 .btn--white {
@@ -2747,6 +2879,33 @@ a.contact-item:hover .contact-item__text {
         top: 1.5rem;
         right: 1.5rem;
     }
+
+    .nav__actions {
+        gap: 0.625rem;
+    }
+
+    .nav__call {
+        width: 2.9rem;
+        min-width: 2.9rem;
+        height: 2.9rem;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .nav__call .btn__icon-shell {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        font-size: 1.05rem;
+    }
+
+    .nav__call .btn__label-group {
+        display: none;
+    }
+
+    .nav__call-menu {
+        display: inline-flex;
+    }
     
     .nav__cta {
         display: none;
@@ -2868,6 +3027,12 @@ a.contact-item:hover .contact-item__text {
     
     .hero__actions .btn {
         width: 100%;
+    }
+
+    .hero__call,
+    .nav__call-menu {
+        justify-content: flex-start;
+        white-space: normal;
     }
     
     .cta__content {
