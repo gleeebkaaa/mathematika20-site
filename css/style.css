@@ -317,10 +317,10 @@ button {
 @keyframes callPulse {
     0%,
     100% {
-        box-shadow: 0 0 0 0 rgba(255, 214, 94, 0.16);
+        box-shadow: 0 0 0 0 rgba(123, 163, 232, 0.18);
     }
     50% {
-        box-shadow: 0 0 0 12px rgba(255, 214, 94, 0);
+        box-shadow: 0 0 0 11px rgba(123, 163, 232, 0);
     }
 }
 
@@ -362,43 +362,6 @@ button {
     overflow: hidden;
 }
 
-.btn__icon-shell,
-.btn__label-group {
-    position: relative;
-    z-index: 1;
-}
-
-.btn__icon-shell {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.15rem;
-    height: 2.15rem;
-    border-radius: 50%;
-    background: rgba(255, 214, 94, 0.18);
-    color: #ffd65e;
-    flex-shrink: 0;
-}
-
-.btn__label-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1.05;
-}
-
-.btn__label {
-    font-size: 0.95rem;
-}
-
-.btn__subtext {
-    margin-top: 0.15rem;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    color: rgba(255, 255, 255, 0.78);
-}
-
 .btn--primary {
     background: var(--gradient-primary);
     background-size: 110% 100%;
@@ -428,20 +391,20 @@ button {
 
 .btn--call {
     position: relative;
-    color: #ffffff;
-    background: linear-gradient(135deg, #17263a 0%, #243b58 100%);
-    border: 1px solid rgba(255, 214, 94, 0.26);
-    box-shadow: 0 12px 26px rgba(23, 38, 58, 0.2);
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(160, 192, 253, 0.45);
+    box-shadow: 0 8px 18px rgba(160, 192, 253, 0.16);
     isolation: isolate;
 }
 
 .btn--call::before {
     content: '';
     position: absolute;
-    inset: -1px;
+    inset: 0;
     border-radius: inherit;
-    background: linear-gradient(120deg, rgba(255, 214, 94, 0.26), rgba(255, 255, 255, 0) 48%, rgba(255, 214, 94, 0.22));
-    opacity: 0.85;
+    background: linear-gradient(135deg, rgba(160, 192, 253, 0.14), rgba(212, 240, 237, 0.12));
+    opacity: 0.9;
     z-index: 0;
 }
 
@@ -450,44 +413,43 @@ button {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    box-shadow: 0 0 0 0 rgba(255, 214, 94, 0.32);
-    animation: callPulse 2.8s ease-out infinite;
+    box-shadow: 0 0 0 0 rgba(160, 192, 253, 0.18);
+    animation: callPulse 3.4s ease-out infinite;
     z-index: -1;
 }
 
 .btn--call:hover {
-    transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 16px 34px rgba(23, 38, 58, 0.28);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(160, 192, 253, 0.22);
 }
 
-.btn--call:hover .btn__icon-shell {
-    background: rgba(255, 214, 94, 0.26);
-}
-
-.btn--call .btn__icon-shell i {
-    animation: phoneWiggle 3.2s ease-in-out infinite;
+.btn--call i {
+    position: relative;
+    z-index: 1;
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+    animation: phoneWiggle 3.4s ease-in-out infinite;
     transform-origin: 60% 65%;
 }
 
-.nav__call {
-    min-width: auto;
-    padding-right: 1.15rem;
+.btn--call span {
+    position: relative;
+    z-index: 1;
 }
 
-.nav__call .btn__subtext {
-    display: none;
+.nav__call {
+    min-width: 8.75rem;
 }
 
 .nav__call-menu {
     display: none;
     width: 100%;
     margin-top: 2rem;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .hero__call {
-    min-width: 16.5rem;
-    justify-content: flex-start;
+    min-width: 15rem;
 }
 
 .btn--white {
@@ -2885,22 +2847,9 @@ a.contact-item:hover .contact-item__text {
     }
 
     .nav__call {
-        width: 2.9rem;
-        min-width: 2.9rem;
-        height: 2.9rem;
-        padding: 0;
-        border-radius: 50%;
-    }
-
-    .nav__call .btn__icon-shell {
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        font-size: 1.05rem;
-    }
-
-    .nav__call .btn__label-group {
-        display: none;
+        min-width: 8rem;
+        padding: 0.7rem 0.95rem;
+        border-radius: var(--radius-full);
     }
 
     .nav__call-menu {
@@ -3031,8 +2980,7 @@ a.contact-item:hover .contact-item__text {
 
     .hero__call,
     .nav__call-menu {
-        justify-content: flex-start;
-        white-space: normal;
+        justify-content: center;
     }
     
     .cta__content {
