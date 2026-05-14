@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Clean-param: utm_referer&utm_ya_campaign&yabizcmpgn&utm_candidate&ybaip&etext&utm_source&utm_medium&utm_campaign&utm_content&utm_term /
 
 Host: mathematika20.ru
 Sitemap: https://mathematika20.ru/sitemap.xml
