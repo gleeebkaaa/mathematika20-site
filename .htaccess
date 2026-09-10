@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteRule ^\.well-known/acme-challenge/ - [L]
+
 RewriteCond %{HTTP_HOST} ^www\.mathematika20\.ru$ [NC]
 RewriteRule ^(.*)$ https://mathematika20.ru/$1 [R=301,L]
 
